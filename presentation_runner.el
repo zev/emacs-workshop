@@ -9,6 +9,11 @@
   (defvar democamp/code-dir (concat default-directory "code/"))
   (defvar democamp/cue-buffer "*RubyKaigi*")
 
+  (defun democamp/load-code (codefile)
+    "Load the code file and make sure the point is at the top"
+    (find-file (concat democamp/code-dir codefile))
+    (goto-char (point-min)))
+
   (defun democamp/next ()
     (interactive)
     (let (start sexp)

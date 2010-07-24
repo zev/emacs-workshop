@@ -34,7 +34,7 @@
 ;; Using ri
 (progn
   (set-face-attribute 'default nil :height 200)
-  (find-file (concat democamp/code-dir "sample.rb"))
+  (democamp/load-code "sample.rb")
   (search-forward "inject")
   (ri))
 
