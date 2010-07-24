@@ -1,0 +1,67 @@
+# This is a test presentation using epresent.el
+* @M-x emacs-and-ruby
+
+** This is some text about what we are going to do for this workshop.
+
+* Outline
+@toc
+
+* @Objectives
+** To learn more about using emacs efficiently.
+** To show off cool new tricks
+** M-x butterfly
+* Basics
+** Open/Save file
+** Quit
+** up/down/left/right
+** by words
+** Copy/paste
+** undo
+* @Ruby
+** ido-mode
+** Navigation
+** next def
+** select def
+** Commenting
+** IRB interaction
+** GDB
+** Grepping
+M-x rgrep
+** TAGS
+http://www.gnu.org/software/emacs/manual/html_node/emacs/Select-Tags-Table.html#Select-Tags-Table
+** Ri
+** Rails/Rinari
+** Snippets
+* @Source Control
+** VC
+** Magit
+**source control usage of reverting changes.
+** making commits
+* @Challenges
+** query-replace across multiple files.
+** tags offers this
+** Updating changelog with commit messages?
+**show annotate and viewing previous versions etc..
+
+http://emacs.wordpress.com/2007/01/
+http://www.emacswiki.org/emacs/EmacsObjectOrientedProgrammingSystem
+
+* @Show off time
+* Just text
+** Sub heading of text
+  This is some text for inside of the outline.
+* Text with multi sub headings
+** We can run around
+** Eating edamame
+
+
+
+** Having fun
+* Show some code
+=class Hoge=
+=  def foo=
+=    "bar"=
+=  end=
+=end=
+* Image
+[/Users/Zev/projects/emacs-workshop/images/intro.jpg Fun times!]
