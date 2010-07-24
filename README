@@ -1,6 +1,17 @@
-These are the presentation files and notes for the
-2010 RubyKaigi M-x emacs-and-ruby workshop.
+These are the presentation files and notes for the 2010 RubyKaigi M-x
+emacs-and-ruby workshop.
 
-The goal of the workshop is to get a group of
-emacs users together and show off Ruby coding techniques
-and other uses of emacs.
+The goal of the workshop is to get a group of Emacs users together and
+show off Ruby coding techniques and other uses of Emacs.
+
+To run the presentation you will need epresent installed.
+
+Then load the file presentation_runner.el.
+
+Once loaded type C-> to go to the next slide.
+
+Note each slide is a set of code that may do things to the buffer.
+Some of these slides will load up a epresent slide.  Inside of
+epresent press n to go to the next slide inside of epresent.  To go to
+the next slide in the "presentation" simply press C-> even inside of
+epresent.

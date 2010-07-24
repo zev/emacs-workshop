@@ -1,4 +1,4 @@
-
+;; These are the slides that will be run during the RubyKaigi
 
 (democamp/say "Placeholder")
 
@@ -29,7 +29,7 @@
   (set-face-attribute 'default nil :height 200)
   (delete-other-windows)
   (sit-for 1)
-  (animate-sequence (list "M-x emacs-and-ruby" "RubyKaigi 2010" "Zev Blut" "and" "You" "2010-08-28") 1))
+  (animate-sequence (list "M-x emacs-and-ruby" "RubyKaigi 2010" "Zev Blut" "+ You" "2010-08-28") 1))
 
 ;; Using ri
 (progn
