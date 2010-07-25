@@ -1,5 +1,5 @@
 # This is a test presentation using epresent.el
-* @M-x emacs-and-ruby
+* @M-x ruby-and-emacs-workshop
 
 ** This is some text about what we are going to do for this workshop.
 
@@ -7,36 +7,138 @@
 @toc
 
 * @Objectives
-** To learn more about using emacs efficiently.
+
+** To learn more about using Emacs efficiently.
+
+** Focusing on coding in Ruby
+
 ** To show off cool new tricks
-** M-x butterfly
-* Basics
+
+** Everyone gets a bit better
+
+* @Setup
+
+** Make sure everyone has Emacs running and at a reasonable version
+
+** Perhaps setup a small virtual box VM image with Emacs.
+# The question is will there be a fast enough method to distribute
+# this image and vbox to the members?  CDs USB drives?
+
+* @Basics
 ** Open/Save file
 ** Quit
 ** up/down/left/right
 ** by words
 ** Copy/paste
 ** undo
-* @Ruby
+
+* Opening / Saving files
+
+** [ C-x C-f ] Opens a file
+
+** [ C-x C-s ] Saves a file
+
+* Quitting
+
+** [ C-x C-c ] Quits
+
+* Cancel what you are doing
+
+** [ C-g ] cancel whatever you are doing
+
+* Moving around
+
+** [ C-p or up arrow ] move up a line
+** [ C-n or down arrow ] move down a line
+** [ C-b or left arrow ] move back a character
+** [ C-f or right arrow ] move forward a character
+
+* Moving faster
+
+** [ M-f ] move forward a word
+** [ M-b ] move backward a word
+** [ C-a ] move to the beginning of a line
+** [ C-e ] move to the end of a line
+** [ M-< ] move to the begging of the buffer
+** [ M-> ] move to the end of the buffer
+** [ C-s ] search forward
+** [ C-r ] search backward
+** [ C-s C-s ] repeat last search
+
+* Copy / Paste
+
+** [C-space] start mark
+** [M-w] copy region
+** [C-w] cut region
+** [C-y] paste/yank region
+** [M-y] cycle through yanks
+
+* Other deletions
+** [M-d] delete forward word
+** [M-DEL] delete previous word
+
+* Undo
+
+** [ C-x u ]
+
+** [ C-\ ]
+
+
+* A few more good to know options
+
+** Select all
+** Split windows moving  around buffers
+
+* M-x
+
+** Call any interactive function
+
+** Good way to explore features
+
+* Getting Help
+** Describing modes
+** Looking up functions and variables
+** Keys for a mode
+
+* @Helpful modes
 ** ido-mode
+** anything.el
+# Don't get dragged down into the details of these modes until
+# later. But it might be good to let members know about them now?
+
+* @Ruby
 ** Navigation
 ** next def
 ** select def
 ** Commenting
 ** IRB interaction
 ** GDB
-** Grepping
-M-x rgrep
-** TAGS
-http://www.gnu.org/software/emacs/manual/html_node/emacs/Select-Tags-Table.html#Select-Tags-Table
+
+* Referencing documentation
 ** Ri
+
+* @Finding code
+** Grep
+** TAGS
+** Other modes to help
+* Grepping
+** M-x grep
+** M-x rgrep
+** my horrible grep hacks
+* TAGS
+http://www.gnu.org/software/emacs/manual/html_node/emacs/Select-Tags-Table.html#Select-Tags-Table
+
+* Other Ruby tools
 ** Rails/Rinari
+** Textmate-mode
 ** Snippets
+
 * @Source Control
 ** VC
 ** Magit
 **source control usage of reverting changes.
 ** making commits
+
 * @Challenges
 ** query-replace across multiple files.
 ** tags offers this
@@ -47,15 +149,13 @@ http://emacs.wordpress.com/2007/01/
 http://www.emacswiki.org/emacs/EmacsObjectOrientedProgrammingSystem
 
 * @Show off time
-* Just text
-** Sub heading of text
-  This is some text for inside of the outline.
-* Text with multi sub headings
-** We can run around
-** Eating edamame
+** Let's see what you can teach us!
+** modes, tools
+** workflow etc..
 
-
-
+# these below are just reference for me on how epresent works
+# For code using (progn) in presentation-runner is better.
+# images though are probably better here
 ** Having fun
 * Show some code
 =class Hoge=

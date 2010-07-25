@@ -7,8 +7,11 @@
   (menu-bar-mode 1)
   (tool-bar-mode 1)
   (set-face-attribute 'default nil :height 200)
-  (find-file (concat democamp/presentation-dir "presentation-1.txt"))
-  (democamp/say "RubyKaigi M-x emacs-and-ruby")
+;;   (set-frame-configuration '( 'frame-configuration
+;;                              (fullscreen . fullboth)
+;;                             ) 'nodelete)
+;;  (find-file (concat democamp/presentation-dir "presentation-1.txt"))
+  (democamp/say "RubyKaigi M-x ruby-and-emacs-workshop")
   (frame-configuration-to-register ?a))
 
 ;; (progn
@@ -29,7 +32,12 @@
   (set-face-attribute 'default nil :height 200)
   (delete-other-windows)
   (sit-for 1)
-  (animate-sequence (list "M-x emacs-and-ruby" "RubyKaigi 2010" "Zev Blut" "+ You" "2010-08-28") 1))
+  (animate-sequence (list "M-x ruby-and-emacs-workshop" "RubyKaigi 2010" "Zev Blut" "& You" "2010-08-28") 1))
+
+;; emacs basics (skippable based on attendees)
+
+;; ruby-mode in action
+
 
 ;; Using ri
 (progn
@@ -59,7 +67,13 @@
   (snake))
 
 
-;; Planner
+;; Rinari emacs-rails
+
+;; Shell mode
+
+;; SQL mode ?
+
+;; More advanced features
 (democamp/say "Now the wild stuff starts.")
 (democamp/say "This should prove skip works.")
 
