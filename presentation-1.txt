@@ -108,17 +108,63 @@
 
 * @Ruby
 ** Navigation
+   [C-down] go to next empty line
+   [C-up] go to previous line comint-previous-input
+   # This actually jumps the empty lines
+
+   [C-M-a] beginning of defun
+   [C-M-e] end of defun
+   # both of these seem to take me to the top of the class versus defs
+
+   [C-M-f] forward sexp
+   [C-M-b] backward sexp
+   # This depends upon where the cursor is
+
+   [C-M-n] end of block
+   [C-M-p] beginning of block
+   # These tend to be a bit more understandable
+
+   [C-M-q] indent-exp based on indent level of def
+
+
+
 ** next def
 ** select def
 ** Commenting
+
+** Ruby-mode and sending to inf-ruby
+   [C-c C-b] send block
+   [C-c C-x] [C-M-x] send definition
+   # I find that these two methods are unreliable as to what the
+   send. it is probably just me, so I want someone else to show me the
+   light.
+
+   [C-c C-l] load file
+   [C-c C-r] send region
+   # These two are reliable
+   [C-c C-z] switch to inf mode
+
+
+** electric mode
+
 ** IRB interaction
+
+   #[C-x C-e] send last line of code to ruby process
+
+   [C-c M-r] send region and go
+
+
+
+
 ** GDB
 
+
 * Referencing documentation
-** Ri
+** Ri yari the many others
 
 * @Finding code
 ** Grep
+** M-x occur
 ** TAGS
 ** Other modes to help
 * Grepping
@@ -133,17 +179,34 @@ http://www.gnu.org/software/emacs/manual/html_node/emacs/Select-Tags-Table.html#
 ** Textmate-mode
 ** Snippets
 
+# ruby hide show custom elide
+# hs-mode does not seem to actually hide any ruby code.
+
+(defun elide-greater ()
+  "Set selective display hiding anything greater than the current column
+that the cursor is on."
+   (interactive "")
+   (set-selective-display (+ (current-column) 1)))
+
+(global-set-key "\C-c." 'elide-greater)
+
+
+
 * @Source Control
 ** VC
 ** Magit
 **source control usage of reverting changes.
 ** making commits
+** git.el # same thing as vc- or plugs into it?
 
 * @Challenges
 ** query-replace across multiple files.
 ** tags offers this
 ** Updating changelog with commit messages?
 **show annotate and viewing previous versions etc..
+** pet peeve how to fix mixed indented code in read only file for
+*temporary viewing.
+
 
 http://emacs.wordpress.com/2007/01/
 http://www.emacswiki.org/emacs/EmacsObjectOrientedProgrammingSystem
