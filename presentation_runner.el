@@ -57,9 +57,12 @@
       (erase-buffer)
       (insert text)
       (goto-char (point-min))
-      ;;(call-interactively 'emacspeak-speak-buffer)
-      (shell-command-on-region (point-min) (point-max) "say")
-      ))
+      (cond ((featurep 'emacspeak)
+             (call-interactively 'emacspeak-speak-buffer))
+
+            ((or (featurep 'aquamacs) (featurep 'mac-carbon) (featurep 'ns) )
+             (shell-command-on-region (point-min) (point-max) "say")))))
+
 
   (global-set-key (kbd "C->") 'democamp/next)
   (global-set-key (kbd "C-<") 'democamp/previous)
