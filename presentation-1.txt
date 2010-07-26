@@ -86,8 +86,12 @@
 
 * A few more good to know options
 
-** Select all
+** [ C-x h ] Select all
 ** Split windows moving  around buffers
+** [ C-x 1 ]
+** [ C-x 2 ]
+** [ C-x 3 ]
+** [ C-x o ]
 
 * M-x
 
@@ -102,15 +106,23 @@
 
 * @Helpful modes
 ** ido-mode
+# how to handle creating new files with C-x C-f finds a matching file.
+** Smex
 ** anything.el
 # Don't get dragged down into the details of these modes until
 # later. But it might be good to let members know about them now?
 
+** [ M-/ ] and Hippie expand
+** Please show off your awesome settings!
+
 * @Ruby
 ** Navigation
 ** next def
-** select def
+** [ ] select def
+# Beginning of defun has issues from time to time
+** [ C-M-h ] mark defun
 ** Commenting
+** Indentation (re indent) etc
 ** IRB interaction
 ** GDB
 
