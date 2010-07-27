@@ -1,0 +1,79 @@
+# Show the basics of Emacs (can skip)
+* @Basics
+** Open/Save file
+** Quit
+** up/down/left/right
+** by words
+** Copy/paste
+** undo
+
+* Opening / Saving files
+
+** [ C-x C-f ] Opens a file
+
+** [ C-x C-s ] Saves a file
+
+* Quitting
+
+** [ C-x C-c ] Quits
+
+* Cancel what you are doing
+
+** [ C-g ] cancel whatever you are doing
+
+* Moving around
+
+** [ C-p or up arrow ] move up a line
+** [ C-n or down arrow ] move down a line
+** [ C-b or left arrow ] move back a character
+** [ C-f or right arrow ] move forward a character
+
+* Moving faster
+
+** [ M-f ] move forward a word
+** [ M-b ] move backward a word
+** [ C-a ] move to the beginning of a line
+** [ C-e ] move to the end of a line
+** [ M-< ] move to the begging of the buffer
+** [ M-> ] move to the end of the buffer
+** [ C-s ] search forward
+** [ C-r ] search backward
+** [ C-s C-s ] repeat last search
+
+* Copy / Paste
+
+** [C-space] start mark
+** [M-w] copy region
+** [C-w] cut region
+** [C-y] paste/yank region
+** [M-y] cycle through yanks
+
+* Other deletions
+** [M-d] delete forward word
+** [M-DEL] delete previous word
+
+* Undo
+
+** [ C-x u ]
+
+** [ C-\ ]
+
+* A few more good to know options
+
+** [ C-x h ] Select all
+** Split windows moving  around buffers
+** [ C-x 1 ]
+** [ C-x 2 ]
+** [ C-x 3 ]
+** [ C-x o ]
+
+* M-x
+
+** Call any interactive function
+
+** Good way to explore features
+
+* Getting Help
+** Describing modes
+** Looking up functions and variables
+** Keys for a mode

@@ -1,0 +1,21 @@
+Sketch of the time available during the workshop
+-------
+90 minutes in total
+
+5 minutes intro
+
+5 minutes basics
+
+10 minutes Ruby-mode & inf-ruby-mode
+
+10 minutes other ruby tools
+
+10 minutes Source Control
+
+5 minutes shell-mode, etc..
+
+10 minutes Ruby Debug
+
+10 minutes RSense
+
+Remaining show & tell / challenges

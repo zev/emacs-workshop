@@ -1,0 +1,41 @@
+# This is a test presentation using epresent.el
+* @M-x ruby-and-emacs-workshop
+
+# The objectives of the workshop
+
+** To learn more about using Emacs efficiently.
+
+** Focusing on coding in Ruby
+
+** To share new tricks and techniques
+
+** Everyone gets a bit better
+
+
+* Outline
+
+** Setup
+
+** Basics
+
+** Ruby-mode
+
+** Finding code
+
+** Other helpful modes
+
+** Source control
+
+** Challenges
+
+** Show and Tell
+
+
+* @Setup
+
+** Make sure everyone has Emacs running and at a reasonable version
+# version 22 preferably 23
+
+** Perhaps setup a small virtual box VM image with Emacs.
+# The question is will there be a fast enough method to distribute
+# this image and vbox to the members?  CDs USB drives?

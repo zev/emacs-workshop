@@ -1,120 +1,3 @@
-# This is a test presentation using epresent.el
-* @M-x ruby-and-emacs-workshop
-
-** This is some text about what we are going to do for this workshop.
-
-* Outline
-@toc
-
-* @Objectives
-
-** To learn more about using Emacs efficiently.
-
-** Focusing on coding in Ruby
-
-** To show off cool new tricks
-
-** Everyone gets a bit better
-
-* @Setup
-
-** Make sure everyone has Emacs running and at a reasonable version
-
-** Perhaps setup a small virtual box VM image with Emacs.
-# The question is will there be a fast enough method to distribute
-# this image and vbox to the members?  CDs USB drives?
-
-* @Basics
-** Open/Save file
-** Quit
-** up/down/left/right
-** by words
-** Copy/paste
-** undo
-
-* Opening / Saving files
-
-** [ C-x C-f ] Opens a file
-
-** [ C-x C-s ] Saves a file
-
-* Quitting
-
-** [ C-x C-c ] Quits
-
-* Cancel what you are doing
-
-** [ C-g ] cancel whatever you are doing
-
-* Moving around
-
-** [ C-p or up arrow ] move up a line
-** [ C-n or down arrow ] move down a line
-** [ C-b or left arrow ] move back a character
-** [ C-f or right arrow ] move forward a character
-
-* Moving faster
-
-** [ M-f ] move forward a word
-** [ M-b ] move backward a word
-** [ C-a ] move to the beginning of a line
-** [ C-e ] move to the end of a line
-** [ M-< ] move to the begging of the buffer
-** [ M-> ] move to the end of the buffer
-** [ C-s ] search forward
-** [ C-r ] search backward
-** [ C-s C-s ] repeat last search
-
-* Copy / Paste
-
-** [C-space] start mark
-** [M-w] copy region
-** [C-w] cut region
-** [C-y] paste/yank region
-** [M-y] cycle through yanks
-
-* Other deletions
-** [M-d] delete forward word
-** [M-DEL] delete previous word
-
-* Undo
-
-** [ C-x u ]
-
-** [ C-\ ]
-
-
-* A few more good to know options
-
-** [ C-x h ] Select all
-** Split windows moving  around buffers
-** [ C-x 1 ]
-** [ C-x 2 ]
-** [ C-x 3 ]
-** [ C-x o ]
-
-* M-x
-
-** Call any interactive function
-
-** Good way to explore features
-
-* Getting Help
-** Describing modes
-** Looking up functions and variables
-** Keys for a mode
-
-* @Helpful modes
-** ido-mode
-# how to handle creating new files with C-x C-f finds a matching file.
-** Smex
-** anything.el
-# Don't get dragged down into the details of these modes until
-# later. But it might be good to let members know about them now?
-
-** [ M-/ ] and Hippie expand
-** Please show off your awesome settings!
-
 * @Ruby
 ** Navigation
    [C-down] go to next empty line
@@ -179,6 +62,7 @@
 ** M-x occur
 ** TAGS
 ** Other modes to help
+
 * Grepping
 ** M-x grep
 ** M-x rgrep
@@ -187,6 +71,7 @@
 http://www.gnu.org/software/emacs/manual/html_node/emacs/Select-Tags-Table.html#Select-Tags-Table
 
 * Other Ruby tools
+** Rdoc modes?
 ** Rails/Rinari
 ** Textmate-mode
 ** Snippets
@@ -202,6 +87,20 @@ that the cursor is on."
 
 (global-set-key "\C-c." 'elide-greater)
 
+* imenu & idomenu as another way of scanning code structure.
+
+
+
+* @Helpful modes
+** ido-mode
+# how to handle creating new files with C-x C-f finds a matching file.
+** Smex
+** anything.el
+# Don't get dragged down into the details of these modes until
+# later. But it might be good to let members know about them now?
+
+** [ M-/ ] and Hippie expand
+** Please show off your awesome settings!
 
 
 * @Source Control
@@ -210,14 +109,15 @@ that the cursor is on."
 **source control usage of reverting changes.
 ** making commits
 ** git.el # same thing as vc- or plugs into it?
+** SMerge patches
+
 
 * @Challenges
-** query-replace across multiple files.
+* query-replace across multiple files.
 ** tags offers this
-** Updating changelog with commit messages?
-**show annotate and viewing previous versions etc..
-** pet peeve how to fix mixed indented code in read only file for
-*temporary viewing.
+* Updating changelog with commit messages?
+*show annotate and viewing previous versions etc..
+* pet peeve how to fix mixed indented code in read only file for temporary viewing.
 
 
 http://emacs.wordpress.com/2007/01/

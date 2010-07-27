@@ -3,8 +3,8 @@
 ;; http://sachachua.com/blog/2009/12/behind-the-scenes-livin-la-vida-emacs/
 
 (progn ;; Setup
-  (defvar democamp/presentation-dir default-directory)
-  (defvar democamp/presentation-file (concat democamp/presentation-dir "rubykaigi.el"))
+  (defvar democamp/presentation-dir (concat default-directory "presentations/"))
+  (defvar democamp/presentation-file (concat default-directory "rubykaigi.el"))
   (defvar democamp/image-dir (concat default-directory "images/"))
   (defvar democamp/code-dir (concat default-directory "code/"))
   (defvar democamp/cue-buffer "*RubyKaigi*")
@@ -13,6 +13,12 @@
     "Load the code file and make sure the point is at the top"
     (find-file (concat democamp/code-dir codefile))
     (goto-char (point-min)))
+
+  (defun democamp/load-presentation (presfile)
+    "Load and start an epresent presentation file"
+    (find-file (concat democamp/presentation-dir presfile))
+    (outline-mode)
+    (epresent-run-frame))
 
   (defun democamp/next ()
     (interactive)
