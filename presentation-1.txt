@@ -116,7 +116,9 @@
 ** Please show off your awesome settings!
 
 * @Ruby
-** Navigation
+
+
+* @Ruby Navigation
    [C-down] go to next empty line
    [C-up] go to previous line comint-previous-input
    # This actually jumps the empty lines
@@ -144,7 +146,7 @@
 ** [ C-M-h ] mark defun
 ** Commenting
 
-** Ruby-mode and sending to inf-ruby
+* @Ruby-mode and sending to inf-ruby
    [C-c C-b] send block
    [C-c C-x] [C-M-x] send definition
    # I find that these two methods are unreliable as to what the
@@ -168,10 +170,10 @@
 
 
 
-** GDB
+* @GDB
 
 
-* Referencing documentation
+* @Referencing documentation
 ** Ri yari the many others
 
 * @Finding code
@@ -186,7 +188,7 @@
 * TAGS
 http://www.gnu.org/software/emacs/manual/html_node/emacs/Select-Tags-Table.html#Select-Tags-Table
 
-* Other Ruby tools
+* @Other Ruby tools
 ** Rails/Rinari
 ** Textmate-mode
 ** Snippets
