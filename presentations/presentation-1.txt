@@ -72,6 +72,7 @@ http://www.gnu.org/software/emacs/manual/html_node/emacs/Select-Tags-Table.html#
 
 * Other Ruby tools
 ** Rdoc modes?
+** Running tests
 ** Rails/Rinari
 ** Textmate-mode
 ** Snippets
