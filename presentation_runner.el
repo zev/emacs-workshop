@@ -8,6 +8,7 @@
   (defvar democamp/image-dir (concat default-directory "images/"))
   (defvar democamp/code-dir (concat default-directory "code/"))
   (defvar democamp/cue-buffer "*RubyKaigi*")
+  (defvar democamp/command-buffer "*KeyCommand*")
 
   (defun democamp/load-code (codefile)
     "Load the code file and make sure the point is at the top"
@@ -69,6 +70,93 @@
             ((or (featurep 'aquamacs) (featurep 'mac-carbon) (featurep 'ns) )
              (shell-command-on-region (point-min) (point-max) "say")))))
 
+
+  ;; look at tail.el for inspiration
+  (defun democamp/show-and-execute-command (command)
+    (democamp/disp-command-window command)
+    ;; will need to make sure that apply is on the code buffer
+    (apply command ()))
+
+  (defun democamp/disp-command-window (command)
+    (if (equal (selected-window) (minibuffer-window))
+        (if (other-window 1)
+            (select-window (other-window 1))
+          (if window-system
+              (select-frame (other-frame 1)))))
+
+    (let* ((this-buffer (current-buffer))
+           (this-window (selected-window))
+           (command-disp-buf (set-buffer (get-buffer-create democamp/command-buffer)))
+           (command-max-size 15)
+           (command-raise t)
+           (command-hide-delay 2))
+
+        (if (cdr (assq 'unsplittable (frame-parameters)))
+	;; In an unsplittable frame, use something somewhere else.
+	(display-buffer command-disp-buf)
+      (unless (or (and (fboundp 'special-display-p)
+                       (special-display-p (buffer-name command-disp-buf)))
+                  (and (fboundp 'same-window-p)
+                       (same-window-p (buffer-name command-disp-buf)))
+		  (get-buffer-window democamp/command-buffer)
+	;; By default, split the bottom window and use the lower part.
+	(democamp/select-lowest-window)
+	(split-window))
+      (pop-to-buffer command-disp-buf))
+
+
+    (toggle-read-only 0)
+    (erase-buffer)
+
+    (democamp/insert-command-and-key command)
+
+    (toggle-read-only 1)
+    (shrink-window-if-larger-than-buffer (get-buffer-window command-disp-buf t))
+
+    (if (> (window-height (get-buffer-window command-disp-buf t)) command-max-size)
+	(shrink-window (- (window-height (get-buffer-window command-disp-buf t)) command-max-size)))
+    (set-buffer-modified-p nil)
+
+    (if command-raise
+	(raise-frame (selected-frame)))
+
+    (select-window this-window)
+
+    (if command-hide-delay
+	(run-with-timer command-hide-delay nil 'democamp/hide-command-buffer)))))
+
+  (defun democamp/select-lowest-window ()
+    "Select the lowest window on the frame."
+    (if (fboundp 'frame-lowest-window)
+        (select-window (frame-lowest-window))
+      (let* ((lowest-window (selected-window))
+             (bottom-edge (car (cdr (cdr (cdr (window-edges))))))
+             (last-window (previous-window))
+             (window-search t))
+        (while window-search
+          (let* ((this-window (next-window))
+                 (next-bottom-edge (cadr (cddr (window-edges this-window)))))
+            (when (< bottom-edge next-bottom-edge)
+              (setq bottom-edge next-bottom-edge)
+              (setq lowest-window this-window))
+            (select-window this-window)
+            (when (eq last-window this-window)
+              (select-window lowest-window)
+              (setq window-search nil)))))))
+
+  (defun democamp/insert-command-and-key (command)
+    (insert-string (concat "\n\nCommand: (" (symbol-name command) ") \n\n\n"))
+    (insert-string (concat "Bound Keys: \n\n"))
+    (where-is command t)
+    (backward-sexp)
+    (kill-line))
+
+  ;; take from tail.el
+  (defun democamp/hide-command-buffer (buffer)
+    (let ((window (get-buffer-window buffer t)))
+      (and window
+           (or (eq window (frame-root-window (window-frame window)))
+               (delete-window window)))))
 
   (global-set-key (kbd "C->") 'democamp/next)
   (global-set-key (kbd "C-<") 'democamp/previous)
