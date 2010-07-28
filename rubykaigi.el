@@ -39,29 +39,29 @@
   (democamp/load-code "cgi.rb")
 
   ;; simple paragraph movement
-  (forward-paragraph)
+  (dcse 'forward-paragraph)
   (sit-for 1)
-  (backward-paragraph)
+  (dcse 'backward-paragraph)
   (sit-for 1)
   ;; defun movement
-  (ruby-end-of-defun)
+  (dcse 'ruby-end-of-defun)
   (sit-for 1)
-  (ruby-beginning-of-defun)
+  (dcse 'ruby-beginning-of-defun)
 
   ;; sexp movement
   ;; may want to search to a def of inside an if
-  (forward-paragraph)
+  (dcse 'forward-paragraph)
   (sit-for 1)
-  (forward-paragraph)
-  (ruby-forward-sexp)
-  (ruby-forward-sexp)
-  (ruby-forward-sexp)
+  (dcse 'forward-paragraph)
+  (dcse 'ruby-forward-sexp)
+  (dcse 'ruby-forward-sexp)
+  (dcse 'ruby-forward-sexp)
 
   ;; block movement
   (search-forward "initialize")
-  (ruby-end-of-block)
-  (ruby-end-of-block)
-  (ruby-beginning-of-block)
+  (dcse 'ruby-end-of-block)
+  (dcse 'ruby-end-of-block)
+  (dcse 'ruby-beginning-of-block)
   )
 
 

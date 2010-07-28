@@ -77,6 +77,8 @@
     ;; will need to make sure that apply is on the code buffer
     (apply command ()))
 
+  (defalias 'dcse 'democamp/show-and-execute-command)
+
   (defun democamp/disp-command-window (command)
     (if (equal (selected-window) (minibuffer-window))
         (if (other-window 1)
