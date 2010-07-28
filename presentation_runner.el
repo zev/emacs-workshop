@@ -87,43 +87,43 @@
     (let* ((this-buffer (current-buffer))
            (this-window (selected-window))
            (command-disp-buf (set-buffer (get-buffer-create democamp/command-buffer)))
-           (command-max-size 15)
+           (command-max-size 45)
            (command-raise t)
-           (command-hide-delay 2))
+           (command-hide-delay 4))
 
-        (if (cdr (assq 'unsplittable (frame-parameters)))
-	;; In an unsplittable frame, use something somewhere else.
-	(display-buffer command-disp-buf)
-      (unless (or (and (fboundp 'special-display-p)
-                       (special-display-p (buffer-name command-disp-buf)))
-                  (and (fboundp 'same-window-p)
-                       (same-window-p (buffer-name command-disp-buf)))
-		  (get-buffer-window democamp/command-buffer)
-	;; By default, split the bottom window and use the lower part.
-	(democamp/select-lowest-window)
-	(split-window))
-      (pop-to-buffer command-disp-buf))
+      (if (cdr (assq 'unsplittable (frame-parameters)))
+          ;; In an unsplittable frame, use something somewhere else.
+          (display-buffer command-disp-buf)
+        ;; (unless (or (and (fboundp 'special-display-p)
+        ;;                  (special-display-p (buffer-name command-disp-buf)))
+        ;;             (and (fboundp 'same-window-p)
+        ;;                  (same-window-p (buffer-name command-disp-buf)))
+        ;;             (get-buffer-window democamp/command-buffer)
+        ;;             ;; By default, split the bottom window and use the lower part.
+        ;;             (democamp/select-lowest-window)
+        ;;             (split-window))
+        ;;   (pop-to-buffer command-disp-buf))
 
+        (pop-to-buffer command-disp-buf)
+        (toggle-read-only 0)
+        (erase-buffer)
 
-    (toggle-read-only 0)
-    (erase-buffer)
+        (democamp/insert-command-and-key command)
 
-    (democamp/insert-command-and-key command)
+        (toggle-read-only 1)
+        (shrink-window-if-larger-than-buffer (get-buffer-window command-disp-buf t))
 
-    (toggle-read-only 1)
-    (shrink-window-if-larger-than-buffer (get-buffer-window command-disp-buf t))
+        (if (> (window-height (get-buffer-window command-disp-buf t)) command-max-size)
+            (shrink-window (- (window-height (get-buffer-window command-disp-buf t)) command-max-size)))
+        (set-buffer-modified-p nil)
 
-    (if (> (window-height (get-buffer-window command-disp-buf t)) command-max-size)
-	(shrink-window (- (window-height (get-buffer-window command-disp-buf t)) command-max-size)))
-    (set-buffer-modified-p nil)
+        (if command-raise
+            (raise-frame (selected-frame)))
 
-    (if command-raise
-	(raise-frame (selected-frame)))
+        (select-window this-window)
 
-    (select-window this-window)
-
-    (if command-hide-delay
-	(run-with-timer command-hide-delay nil 'democamp/hide-command-buffer)))))
+        (if command-hide-delay
+            (run-with-timer command-hide-delay nil 'democamp/hide-command-buffer)))))
 
   (defun democamp/select-lowest-window ()
     "Select the lowest window on the frame."
@@ -152,8 +152,8 @@
     (kill-line))
 
   ;; take from tail.el
-  (defun democamp/hide-command-buffer (buffer)
-    (let ((window (get-buffer-window buffer t)))
+  (defun democamp/hide-command-buffer ()
+    (let ((window (get-buffer-window democamp/command-buffer t)))
       (and window
            (or (eq window (frame-root-window (window-frame window)))
                (delete-window window)))))
