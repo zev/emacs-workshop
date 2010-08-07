@@ -28,7 +28,12 @@
         (setq start (point))
         (forward-sexp)
         (setq sexp (buffer-substring-no-properties start (point))))
-      (eval (read sexp))))
+      ;;(eval (read sexp))))
+      (let ((esexp (read sexp)))
+        (case (completing-read (format "%s %s: " (cadr esexp) "N/S/P :") '("N" "S" "P"))
+          ("S" (democamp/skip))
+          ("P" (democamp/previous))
+          (t (eval esexp))))))
 
   (defun democamp/previous ()
     (interactive)

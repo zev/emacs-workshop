@@ -1,5 +1,9 @@
 ;; These are the slides that will be run during the RubyKaigi
 
+(progn
+  "This is a simple explanation for this slide"
+  )
+
 ;; Window register a
 (progn
   (menu-bar-mode 1)
