@@ -77,10 +77,12 @@
 
 
   ;; look at tail.el for inspiration
-  (defun democamp/show-and-execute-command (command)
+  (defun democamp/show-and-execute-command (command &optional delay &rest args)
     (democamp/disp-command-window command)
     ;; will need to make sure that apply is on the code buffer
-    (apply command ()))
+    (apply command args)
+    (if (numberp delay)
+        (sit-for delay)))
 
   (defalias 'dcse 'democamp/show-and-execute-command)
 
@@ -96,7 +98,7 @@
            (command-disp-buf (set-buffer (get-buffer-create democamp/command-buffer)))
            (command-max-size 45)
            (command-raise t)
-           (command-hide-delay 4))
+           (command-hide-delay 5))
 
       (if (cdr (assq 'unsplittable (frame-parameters)))
           ;; In an unsplittable frame, use something somewhere else.
