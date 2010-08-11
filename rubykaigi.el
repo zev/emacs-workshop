@@ -151,11 +151,13 @@
 ;; VCS
 (progn
   "Show off magit and git.el in vc-status"
-  (dcse 'git-status)
-  ;; log and blame are strong here also integrats with vc tools so
   ;; more consisten with the cvs/svn/etc commands
   (completing-read "enter for next command." '())
-  (dcse 'magit-status)
+  (dcse 'magit-status nil "")
+
+  (completing-read "enter for next command." '())
+  (dcse 'git-status nil "")
+  ;; log and blame are strong here also integrats with vc tools so
   )
 
 ;; More advanced features
