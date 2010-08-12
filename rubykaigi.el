@@ -1,14 +1,13 @@
 ;; These are the slides that will be run during the RubyKaigi
 
-(progn
-  "This is a simple explanation for this slide"
-  )
-
 ;; Window register a
 (progn
+  "Initial setup"
   (menu-bar-mode 1)
   (tool-bar-mode -1)
   (frame-configuration-to-register ?b) ;; Store original config
+
+
   (message "face height is %s" (face-attribute 'default :height))
   (set-face-attribute 'default nil :height 200)
   (message "Mac set to full screen frame config \n %s" (current-frame-configuration))
@@ -24,8 +23,6 @@
 ;;                               (height . 47)
 ;;                               ) 'nodelete)
 
-  ;;  (find-file (concat democamp/presentation-dir "presentation-1.txt"))
-  ;;  (democamp/say "RubyKaigi M-x ruby-and-emacs-workshop")
     (frame-configuration-to-register ?a))
 
 ;; Frame configuration b
@@ -87,6 +84,29 @@
   (search-forward "inject")
   (yari))
 
+
+(progn
+  "inf ruby mode"
+  (dcse 'inf-ruby)
+  (democamp/load-code "sample.rb")
+  (delete-other-windows)
+  (beginning-of-buffer)
+  (sit-for 1)
+  (search-forward "sum")
+  (sit-for 1)
+  (ruby-send-definition)
+  (split-window-vertically)
+  (switch-to-buffer "*ruby*")
+
+
+  (switch-to-buffer "sample.rb")
+  (end-of-buffer)
+  (insert "\n\nHoge.new.sum([5])")
+  ;; (move-beginning-of-line)
+  ;; (set-mark-command)
+  ;; (move-end-of-line)
+  (ruby-send-region-and-go)
+  )
 
 ;; after an epresent-mode the screen is wonky revert to frame config
 (progn
@@ -160,6 +180,25 @@
   ;; log and blame are strong here also integrats with vc tools so
   )
 
+;; Showing grep
+(progn
+  "Show off occur"
+  (democamp/load-code "cgi.rb")
+  (completing-read "enter to run occur." '())
+  (dcse 'occur 5 "post")
+  )
+
+(progn
+  "grep"
+  (rgrep "ruby")
+  )
+
+(progn
+  "Tags"
+  ;; Need to update etags for ruby and recursive directory search
+  )
+
+
 ;; More advanced features
 
 ;; (progn
@@ -169,13 +208,10 @@
 ;;   (setq emacspeak-flyspell-highlight-personality nil)
 ;;  (flyspell-mode 1))
 
-;; (progn
-;;   (democamp/say "even Snake")
-;;   (delete-other-windows)
-;;   (snake))
+(progn
+  "show and tell"
+  (set-face-attribute 'default nil :height 200)
+  (delete-other-windows)
+  (sit-for 1)
+  (animate-sequence (list "Show" "and" "Tell") 1))
 
-
-(democamp/say "Now the wild stuff starts.")
-(democamp/say "This should prove skip works.")
-
-(democamp/say "Show and Tell time!")

@@ -105,11 +105,10 @@ that the cursor is on."
 
 
 * @Source Control
-** VC
+** VC with git.el
 ** Magit
 **source control usage of reverting changes.
 ** making commits
-** git.el # same thing as vc- or plugs into it?
 ** SMerge patches
 
 

@@ -37,5 +37,6 @@
 # version 22 preferably 23
 
 ** Perhaps setup a small virtual box VM image with Emacs.
+# Question for TLUG to answer
 # The question is will there be a fast enough method to distribute
 # this image and vbox to the members?  CDs USB drives?
