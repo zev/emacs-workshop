@@ -36,7 +36,8 @@
 (democamp/load-presentation "intro.txt")
 
 (progn
-  (find-file (concat democamp/image-dir "intro.jpg")))
+  ;; http://blogs.msdn.com/b/steverowe/archive/2004/11/17/code-editor-learning-curves.aspx
+  (find-file (concat democamp/image-dir "curves.jpg")))
 
 ;; emacs basics (skippable based on attendees)
 (democamp/load-presentation "basics.txt")
@@ -207,6 +208,11 @@
 ;;   (load-library "emacspeak-flyspell")
 ;;   (setq emacspeak-flyspell-highlight-personality nil)
 ;;  (flyspell-mode 1))
+
+(progn
+  ;; http://xkcd.com/378/
+  (find-file (concat democamp/image-dir "real_programmers.png")))
+
 
 (progn
   "show and tell"
