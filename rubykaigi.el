@@ -28,6 +28,7 @@
 ;; Frame configuration b
 
 (progn
+  "animate"
   (set-face-attribute 'default nil :height 200)
   (delete-other-windows)
   (sit-for 1)
@@ -36,6 +37,7 @@
 (democamp/load-presentation "intro.txt")
 
 (progn
+  "curves"
   ;; http://blogs.msdn.com/b/steverowe/archive/2004/11/17/code-editor-learning-curves.aspx
   (find-file (concat democamp/image-dir "curves.jpg")))
 
@@ -49,36 +51,40 @@
 ;; kind of want a macro to show the key combination and the defun it
 ;; is mapped to then run the combo and delay for a second
 (progn
+  "Moving around ruby"
+  (delete-other-windows)
   (jump-to-register ?b)
 ;;  (set-face-attribute 'default nil :height 200)
   (democamp/load-code "cgi.rb")
 
   ;; simple paragraph movement
-  (dcse 'forward-paragraph)
-  (dcse 'backward-paragraph)
+  (dcse 'forward-paragraph 5)
+  (dcse 'backward-paragraph 5)
 
   ;; defun movement
-  (dcse 'ruby-end-of-defun)
-  (dcse 'ruby-beginning-of-defun)
+  (dcse 'ruby-end-of-defun 5)
+  (dcse 'ruby-beginning-of-defun 5)
 
   ;; sexp movement
   ;; may want to search to a def of inside an if
-  (dcse 'forward-paragraph)
-  (dcse 'forward-paragraph)
-  (dcse 'ruby-forward-sexp)
-  (dcse 'ruby-forward-sexp)
-  (dcse 'ruby-forward-sexp)
+  (dcse 'forward-paragraph 2)
+  (dcse 'forward-paragraph 2)
+  (dcse 'ruby-forward-sexp 4)
+  (dcse 'ruby-forward-sexp 2)
+  (dcse 'ruby-forward-sexp 2)
 
   ;; block movement
   (search-forward "initialize")
-  (dcse 'ruby-end-of-block)
-  (dcse 'ruby-end-of-block)
-  (dcse 'ruby-beginning-of-block)
+  (dcse 'ruby-end-of-block 5)
+  (dcse 'ruby-end-of-block 2)
+  (dcse 'ruby-beginning-of-block 5)
   )
 
 
 ;; Using ri
 (progn
+  "using ri"
+  (delete-other-windows)
   (jump-to-register ?b)
   (set-face-attribute 'default nil :height 200)
   (democamp/load-code "sample.rb")
@@ -88,7 +94,8 @@
 
 (progn
   "inf ruby mode"
-  (dcse 'inf-ruby)
+  (delete-other-windows)
+  (dcse 'inf-ruby 5)
   (democamp/load-code "sample.rb")
   (delete-other-windows)
   (beginning-of-buffer)
@@ -111,7 +118,8 @@
 
 ;; from http://github.com/rust/dotemacs/blob/master/.emacs
 (progn
-
+  "Testing out align"
+  (delete-other-windows)
   (progn
     (require 'align)
     (add-to-list 'align-rules-list
@@ -140,20 +148,21 @@
   (beginning-of-buffer)
   (set-mark-command)
   (end-of-buffer)
-  (dcse 'align)
+  (dcse 'align 5)
   )
 
 ;; after an epresent-mode the screen is wonky revert to frame config
-(progn
-  ;; jumping back does not seem to work (super slow genie effect)
-  ;;(jump-to-register ?a)
-  (set-face-attribute 'default nil :height 200))
+;; (progn
+;;   ;; jumping back does not seem to work (super slow genie effect)
+;;   ;;(jump-to-register ?a)
+;;   (set-face-attribute 'default nil :height 200))
 
 ;; Rinari emacs-rails
 
 ;; Shell mode
 (progn
   "Shell mode features"
+  (delete-other-windows)
   ;;(jump-to-register ?a)
   (ansi-term "/bin/zsh")
   (insert "echo 'this is an example of scripting input inside an Emacs term'")
@@ -166,10 +175,10 @@
 
   (insert "echo back to term-line-mode C-c j to work with shell like a standard buffer")
   (term-send-input)
-  (dcse 'term-line-mode)
+  (dcse 'term-line-mode 5)
   (dcse 'isearch-backward nil '("@Basics"))
-  (dcse 'backward-sentence)
-  (dcse 'term-char-mode)
+  (dcse 'backward-sentence 3)
+  (dcse 'term-char-mode 5)
   (insert "echo back to term-char-mode C-c k to show how it works like standard shell")
   (term-send-input)
 
@@ -181,6 +190,7 @@
 ;; SQL mode ?
 (progn
   "Using SQL inside of emacs"
+  (delete-other-windows)
   (setq sql-sqlite-program "sqlite3")
   (setq sql-database (concat democamp/code-dir "sample.db"))
   (sql-sqlite)
@@ -206,6 +216,7 @@
 ;; VCS
 (progn
   "Show off magit and git.el in vc-status"
+  (delete-other-windows)
   ;; more consisten with the cvs/svn/etc commands
   (completing-read "enter for next command." '())
   (dcse 'magit-status nil "")
@@ -218,6 +229,7 @@
 ;; Showing grep
 (progn
   "Show off occur"
+  (delete-other-windows)
   (democamp/load-code "cgi.rb")
   (completing-read "enter to run occur." '())
   (dcse 'occur 5 "post")
@@ -225,6 +237,7 @@
 
 (progn
   "grep"
+  (delete-other-windows)
   (rgrep "ruby")
   )
 
@@ -244,6 +257,8 @@
 ;;  (flyspell-mode 1))
 
 (progn
+  "xkcd"
+  (delete-other-windows)
   ;; http://xkcd.com/378/
   (find-file (concat democamp/image-dir "real_programmers.png")))
 
