@@ -194,6 +194,7 @@
   (setq sql-sqlite-program "sqlite3")
   (setq sql-database (concat democamp/code-dir "sample.db"))
   (sql-sqlite)
+  (delete-other-windows)
   ;;create db
   (insert "create table memos(text, priority INTEGER);")
   (comint-send-input)
@@ -212,6 +213,7 @@
 
   ;; Show sql-send-region from other buffer
   )
+
 
 ;; VCS
 (progn
