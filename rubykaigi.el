@@ -272,3 +272,15 @@
   (sit-for 1)
   (animate-sequence (list "Show" "and" "Tell") 1))
 
+
+;; change-major-mode-hook
+;; after-change-major-mode-hook
+
+(add-hook 'after-change-major-mode-hook (lambda ())
+                                (message "Major mode is now %s" major-mode))
+
+(command-history)
+(list-command-history)
+;; pre-command-hook
+;; post-command-hook
+
