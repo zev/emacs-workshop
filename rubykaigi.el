@@ -1,5 +1,8 @@
 ;; These are the slides that will be run during the RubyKaigi
 
+;; This is how I will record what I am doing to create a proper script.
+(open-dribble-file "/tmp/rubykaigi-dribble.el")
+
 ;; Window register a
 (progn
   "Initial setup"
