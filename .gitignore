@@ -1,3 +1,5 @@
 *~
 *#
 TAGS
+*.db
+*flymake.rb
