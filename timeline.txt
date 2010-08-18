@@ -17,3 +17,41 @@ Sketch of the time available during the workshop
 10 minutes RSense
 
 Remaining show & tell / challenges
+
+
+--- Task ---
+Create rails project in shell
+
+make rails calculator controller
+
+commit code
+
+make calculations and user model
+
+run migration
+commit code
+
+write test case for calculate method
+
+write calculate method
+
+write contoller end point
+show how to jump to view
+create view
+
+jump to model
+
+look up ri for inject
+jump to inf-ruby to play with inject
+
+Test run app
+jump to sql-mode to inspect DB
+
+commit code
+look at log history
+run blame
+
+show occur search
+show grep search
+create Tags to search
+
