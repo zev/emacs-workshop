@@ -44,9 +44,6 @@
   ;; http://blogs.msdn.com/b/steverowe/archive/2004/11/17/code-editor-learning-curves.aspx
   (find-file (concat democamp/image-dir "curves.jpg")))
 
-;; emacs basics (skippable based on attendees)
-(democamp/load-presentation "basics.txt")
-
 ;; ruby-mode in action
 ;; epresent file 1
 (democamp/load-presentation "presentation-1.txt")
@@ -276,14 +273,29 @@
   (animate-sequence (list "Show" "and" "Tell") 1))
 
 
+
 ;; change-major-mode-hook
 ;; after-change-major-mode-hook
-
-(add-hook 'after-change-major-mode-hook (lambda ())
-                                (message "Major mode is now %s" major-mode))
-
-(command-history)
-(list-command-history)
+;; (command-history)
+;; (list-command-history)
 ;; pre-command-hook
 ;; post-command-hook
 
+
+
+(defun track-command-executed ()
+  "Records command executed and keys pressed"
+    (message "cmd: %s keys %s\n" this-command (this-command-keys)))
+
+(defun track-mode-change ()
+  "Record the major mode and all minor-modes activated"
+  (message "major-mode: %s\nminor-modes: %s\n\n" major-mode minor-mode-list))
+
+(progn
+  (add-hook 'pre-command-hook 'track-command-executed)
+  (add-hook 'after-change-major-mode-hook 'track-mode-change))
+
+
+(progn
+  (remove-hook 'pre-command-hook 'track-command-executed)
+  (remove-hook 'after-change-major-mode-hook 'track-mode-change))
