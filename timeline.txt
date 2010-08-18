@@ -4,8 +4,6 @@ Sketch of the time available during the workshop
 
 5 minutes intro
 
-5 minutes basics
-
 10 minutes Ruby-mode & inf-ruby-mode
 
 10 minutes other ruby tools

@@ -264,6 +264,7 @@
   ;; http://xkcd.com/378/
   (find-file (concat democamp/image-dir "real_programmers.png")))
 
+(democamp/load-presentation "learn_more.txt")
 
 (progn
   "show and tell"

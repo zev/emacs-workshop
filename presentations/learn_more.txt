@@ -1,0 +1,12 @@
+* Where to learn more about Emacs
+** C-h t Emacs tutorial and built in manual
+
+** Planet Emacsen http://planet.emacsen.org/
+
+** Emacs twitter accounts
+
+** Emacs Wiki http://www.emacswiki.org
+
+* Books
+
+** Rubikitch book
