@@ -274,34 +274,3 @@
   (animate-sequence (list "Show" "and" "Tell") 1))
 
 
-
-;; change-major-mode-hook
-;; after-change-major-mode-hook
-;; (command-history)
-;; (list-command-history)
-;; pre-command-hook
-;; post-command-hook
-
-
-(setq rubykaigidribble "rubykaigidribble.txt")
-(create-file-buffer rubykaigidribble)
-;; for now user will have to save dribble
-
-(defun track-command-executed ()
-  "Records command executed and keys pressed"
-  (with-current-buffer rubykaigidribble
-    (insert (format "cmd: %s keys %s\n" this-command (this-command-keys)))))
-
-(defun track-mode-change ()
-  "Record the major mode and all minor-modes activated"
-  (with-current-buffer rubykaigidribble
-    (insert (format "major-mode: %s\nminor-modes: %s\n\n" major-mode minor-mode-list))))
-
-(progn
-  (add-hook 'pre-command-hook 'track-command-executed)
-  (add-hook 'after-change-major-mode-hook 'track-mode-change))
-
-
-(progn
-  (remove-hook 'pre-command-hook 'track-command-executed)
-  (remove-hook 'after-change-major-mode-hook 'track-mode-change))

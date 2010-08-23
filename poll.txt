@@ -1,0 +1,17 @@
+What people use?
+
+ido-mode
+
+anything
+
+rinari
+
+emacs-rails
+
+Mail in Emacs
+
+IRC in Emacs
+
+WWW in Emacs
+
+Shell in Emacs
