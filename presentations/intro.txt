@@ -1,7 +1,4 @@
-# This is a test presentation using epresent.el
 * @M-x ruby-and-emacs-workshop
-
-# The objectives of the workshop
 
 ** To learn more about using Emacs efficiently.
 
@@ -13,6 +10,8 @@
 
 
 * Outline
+
+** Poll
 
 ** Setup
 
@@ -34,9 +33,5 @@
 * @Setup
 
 ** Make sure everyone has Emacs running and at a reasonable version
-# version 22 preferably 23
+** version 22 preferably 23
 
-** Perhaps setup a small virtual box VM image with Emacs.
-# Question for TLUG to answer
-# The question is will there be a fast enough method to distribute
-# this image and vbox to the members?  CDs USB drives?

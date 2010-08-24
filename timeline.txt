@@ -55,3 +55,7 @@ show occur search
 show grep search
 create Tags to search
 
+
+
+# Make most of Rails app and then focus on the Quiz/Math gcd to avoid
+# design and long drawn out stuff?

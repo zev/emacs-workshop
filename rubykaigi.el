@@ -44,9 +44,16 @@
   ;; http://blogs.msdn.com/b/steverowe/archive/2004/11/17/code-editor-learning-curves.aspx
   (find-file (concat democamp/image-dir "curves.jpg")))
 
+(progn
+  "poll"
+  (democamp/load-presentation "poll.txt"))
+
 ;; ruby-mode in action
 ;; epresent file 1
-(democamp/load-presentation "presentation-1.txt")
+(progn
+  "presentation globbed together"
+  (democamp/load-presentation "presentation-1.txt"))
+
 
 ;; kind of want a macro to show the key combination and the defun it
 ;; is mapped to then run the combo and delay for a second
@@ -248,23 +255,16 @@
   ;; Need to update etags for ruby and recursive directory search
   )
 
-
-;; More advanced features
-
-;; (progn
-;;   (democamp/say "Spell-check, too.")
-;;   (load-library "flyspell")
-;;   (load-library "emacspeak-flyspell")
-;;   (setq emacspeak-flyspell-highlight-personality nil)
-;;  (flyspell-mode 1))
-
 (progn
   "xkcd"
   (delete-other-windows)
   ;; http://xkcd.com/378/
   (find-file (concat democamp/image-dir "real_programmers.png")))
 
-(democamp/load-presentation "learn_more.txt")
+
+(progn
+  "learn more"
+  (democamp/load-presentation "learn_more.txt"))
 
 (progn
   "show and tell"

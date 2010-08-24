@@ -49,8 +49,6 @@
    [C-c M-r] send region and go
 
 
-
-
 ** GDB
 
 

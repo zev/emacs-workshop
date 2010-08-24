@@ -1,0 +1,76 @@
+* @Poll
+
+
+** What parts of Emacs do you use?
+
+
+* @.emacs
+
+** .emacs or init.el
+
+
+** How many customizations do you have?
+** (None/Small/Medium/Large/X-Large)
+
+
+* @Essential Addons
+
+** ido-mode
+
+** anything.el
+
+* @Rails modes
+
+** rinari
+
+** emacs-rails
+
+
+* Other coding tools
+
+** Speedbar
+
+
+** ECB
+
+
+* Emacs package management
+
+** ELPA
+
+** Auto-install emacswiki
+
+* Life in Emacs
+
+* Mail
+
+** GNUS
+
+** Mew
+
+** Wanderlust
+
+* Twitter
+** Twiter.el
+
+
+** Twittering
+
+** IRC
+
+** WWW
+
+* Shell
+
+
+** Eshell
+
+
+** ansi-term
+
+
+** multi-term
+
+
+** irbsh
+

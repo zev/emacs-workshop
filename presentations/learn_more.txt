@@ -1,12 +1,25 @@
 * Where to learn more about Emacs
-** C-h t Emacs tutorial and built in manual
+
+** C-h t Emacs tutorial and built in manuals
 
 ** Planet Emacsen http://planet.emacsen.org/
 
 ** Emacs twitter accounts
+** http://twitter.com/learnemacs
 
 ** Emacs Wiki http://www.emacswiki.org
 
 * Books
 
 ** Rubikitch book
+Emacsテクニックバイブル　~作業効率をカイゼンする200の技
+
+* Screencasts
+
+** Good references?
+
+** Peepcode http://peepcode.com/products/meet-emacs
+
+* Emacs envs
+
+** emacs-starter-kit

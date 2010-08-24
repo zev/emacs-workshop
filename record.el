@@ -24,8 +24,9 @@
 ;; Not sure why, but setting these as a defun only winds up executing
 ;; the last hook.
 (progn
-  (add-hook 'pre-command-hook 'track-command-executed)
-  (add-hook 'after-change-major-mode-hook 'track-mode-change))
+  (add-hook 'pre-command-hook 'track-command-executed))
+;; change mode only shows fundamental mode...
+  ;;(add-hook 'after-change-major-mode-hook 'track-mode-change))
 
 
 (progn
