@@ -1,0 +1,5 @@
+<h1>Round <%= @step -%> for <%= @name -%></h1>
+Question <div class='question'><%= @quiz.question -%> = </div>
+<% form_tag do  %>
+<%= text_field_tag(:answer) %>
+<% end %>
