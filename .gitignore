@@ -4,3 +4,4 @@ TAGS
 *.db
 *flymake.rb
 *.log
+*.sqlite3
