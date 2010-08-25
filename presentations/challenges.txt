@@ -1,0 +1,13 @@
+* RDOC template creator
+
+# http://www.niksula.hut.fi/~thasu/emacs-rdoc-fill.html
+
+* Eldoc for Ruby?
+
+* Fixing some lingering syntax highlighting edge cases
+
+* What else is missing or nice to have for editing Ruby?
+
+* How to fix indentation of read-only code?
+
+* Techniques for making a good Emacs screencast?

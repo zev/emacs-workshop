@@ -78,13 +78,6 @@ http://www.gnu.org/software/emacs/manual/html_node/emacs/Select-Tags-Table.html#
 # ruby hide show custom elide
 # hs-mode does not seem to actually hide any ruby code.
 
-(defun elide-greater ()
-  "Set selective display hiding anything greater than the current column
-that the cursor is on."
-   (interactive "")
-   (set-selective-display (+ (current-column) 1)))
-
-(global-set-key "\C-c." 'elide-greater)
 
 * imenu & idomenu as another way of scanning code structure.
 

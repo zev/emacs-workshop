@@ -166,7 +166,7 @@
 
 ;; Rinari emacs-rails
 
-;; Shell mode
+
 (progn
   "Shell mode features"
   (delete-other-windows)
@@ -194,7 +194,6 @@
   )
 
 
-;; SQL mode ?
 (progn
   "Using SQL inside of emacs"
   (delete-other-windows)
@@ -222,7 +221,6 @@
   )
 
 
-;; VCS
 (progn
   "Show off magit and git.el in vc-status"
   (delete-other-windows)
@@ -235,7 +233,6 @@
   ;; log and blame are strong here also integrats with vc tools so
   )
 
-;; Showing grep
 (progn
   "Show off occur"
   (delete-other-windows)
@@ -273,4 +270,13 @@
   (sit-for 1)
   (animate-sequence (list "Show" "and" "Tell") 1))
 
+(progn
+  "challenges"
+  (democamp/load-presentation "challenges.txt"))
+
+(progn
+  "Presentation part of workshop is over"
+  (animate-sequence (list "C-x C-c" "Thank You!") 3)
+  (sit-for 1)
+  (zone))
 
