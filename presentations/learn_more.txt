@@ -6,6 +6,7 @@
 
 ** Emacs twitter accounts
 ** http://twitter.com/learnemacs
+** http://twitter.com/emacs/japanese
 
 ** Emacs Wiki http://www.emacswiki.org
 

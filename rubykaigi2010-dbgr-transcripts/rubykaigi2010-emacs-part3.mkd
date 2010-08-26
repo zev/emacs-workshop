@@ -1,0 +1,58 @@
+ここまででは、デバッガを外から使う方法を紹介しました。しかし、Ruby の場合だと、デバッガは実行中のプログラムの中から呼び出すこともできます。そのような場合に Emacs インターフェースでデバッグする方法をお見せします。
+Previously, I have been running the debugger from the outset.  However in Ruby, the debugger is not often run initally. Instead it is called from inside a running program. Let me show briefly how use the Emacs interface in this situation.
+
+プログラムはこのような感じです。Ruby 1.9 のデバッガを呼び出すように変更してあります。
+Here is a program where I have added a call to the Ruby 1.9 debugger.
+```ruby
+#!/usr/bin/env ruby
+require 'rbdbgr'
+
+# GCD. We assume positive numbers
+def gcd(a, b)
+  Debugger.new.debugger  # Call debugger here!
+
+  # Make: a <= b
+  if a > b
+    a, b = [b, a]
+  end
+
+  return nil if a <= 0
+
+  if a == 1 or b-a == 0
+    return a
+  end
+  return gcd(b-a, a)
+end
+
+a, b = ARGV[0..1].map {|arg| arg.to_i}
+puts "The GCD of %d and %d is %d" % [a, b, gcd(a, b)]
+```
+
+通常のシェル上で、
+Now I go into a normal comint shell
+
+`M-x shell`
+
+このプログラムを走らせてみると、
+And when I run the program
+
+`ruby gcd-dbgcall.rb 3 5`
+
+デバッガが起動した状態になります。
+I am now in the debugger.
+
+しかし、Emacs は現在のシェル上でデバッガが起動していることを知りません。なので、 dbgr-track-mode を使って伝えてやります。
+But Emacs doesn't know that this shell is inside a particular debugger. So to tell Emacs this, use dbgr-track-mode
+
+`M-x dbgr-track-mode`
+
+デバッガの名前を訊かれます。使えるものは [[いくつかの|http://github.com/rbdbgr]] [[Ruby デバッガ|http://bashdb.sourceforge.net/ruby-debug/home-page.html]]とか、 [[いくつかの|http://code.google.com/p/pydbgr/]] [[Python デバッガ|bashdb.sf.net/pydb]]、それに gdb や [[いくつかの|http://bashdb.sf.net] [POSIX シェルのhttp://github.com/rocky/kshdb] [[デバッガ|http://github.com/rocky/zshdb]] などです。後から別のものに変更することもできます。ここでは rbdbgr を使います。
+You are prompted for the name of a debugger. The debugger names you could list here include a [[couple of|http://github.com/rbdbgr]] [[Ruby debuggers|http://bashdb.sourceforge.net/ruby-debug/home-page.html]], a [[couple of|http://code.google.com/p/pydbgr/]] [[Python debuggers|bashdb.sf.net/pydb]], gdb, or [[some|http://bashdb.sf.net] [POSIX shell|http://github.com/rocky/kshdb] [[debuggers|http://github.com/rocky/zshdb]]. And you can switch from one to the another afterwards. I will use rbdbgr
+
+`rbdbgr`
+
+モードラインにデバッガの名前が出ている点に注目してください。
+Note the mode line now has the name of the debugger.
+
+`frame 0` で画面をリフレッシュします。
+And use `frame 0` to refresh the display.

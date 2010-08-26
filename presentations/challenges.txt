@@ -18,3 +18,7 @@
 ** via tags
 
 ** other ways?
+
+* Function Frequency
+** http://xahlee.org/emacs/function-frequency.html
+** Dribble / record.el
