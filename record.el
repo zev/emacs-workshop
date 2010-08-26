@@ -14,12 +14,14 @@
 (defun track-command-executed ()
   "Records command executed and keys pressed"
   (with-current-buffer rubykaigidribble
-    (insert (format "cmd: %s keys %s\n" this-command (this-command-keys)))))
+    (insert (format "cmd: %s keys %s\n" this-command (this-command-keys)))
+    (write-file rubykaigidribble)    ))
 
 (defun track-mode-change ()
   "Record the major mode and all minor-modes activated"
   (with-current-buffer rubykaigidribble
-    (insert (format "major-mode: %s\nminor-modes: %s\n\n" major-mode minor-mode-list))))
+    (insert (format "major-mode: %s\nminor-modes: %s\n\n" major-mode minor-mode-list))
+    (write-file rubykaigidribble)    ))
 
 ;; Not sure why, but setting these as a defun only winds up executing
 ;; the last hook.
