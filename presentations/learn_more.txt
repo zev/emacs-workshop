@@ -20,6 +20,14 @@ Emacsテクニックバイブル　~作業効率をカイゼンする200の技
 
 ** Peepcode http://peepcode.com/products/meet-emacs
 
-* Emacs envs
+* Emacs example environments
 
-** emacs-starter-kit
+** Phil Hagelberg http://github.com/technomancy/emacs-starter-kit
+
+** Jim Weirich's http://github.com/jimweirich/emacs-setup.git
+
+* Good Video casts
+
+** Emacs IDEverything http://vimeo.com/13158054
+
+** What you can learn from ido.el http://vimeo.com/1013263

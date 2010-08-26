@@ -1,0 +1,17 @@
+* Show & Tell
+** Let's see what you can teach us!
+** modes, tools
+** workflow etc..
+
+* Ruby Debugger
+** Rocky Bernstein
+** http://github.com/rocky/emacs-dbgr/wiki/
+
+* RSense
+** Tomohiro Matsuyama
+** http://github.com/m2ym/rsense
+
+* Anything
+** Shibata Hiroshi
+** http://github.com/hsbt
+

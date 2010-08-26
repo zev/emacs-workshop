@@ -49,9 +49,6 @@
    [C-c M-r] send region and go
 
 
-** GDB
-
-
 * Referencing documentation
 ** Ri yari the many others
 
@@ -81,6 +78,19 @@ http://www.gnu.org/software/emacs/manual/html_node/emacs/Select-Tags-Table.html#
 
 * imenu & idomenu as another way of scanning code structure.
 
+* RVM mode
+
+** http://github.com/senny/rvm.el
+
+** http://vimeo.com/13799494
+
+* Ruby Koan
+
+** get compile mode to work
+
+** make functions to hop to code to edit
+
+** Fill out a few and track our keys
 
 
 * @Helpful modes
@@ -102,22 +112,6 @@ http://www.gnu.org/software/emacs/manual/html_node/emacs/Select-Tags-Table.html#
 ** making commits
 ** SMerge patches
 
-
-* @Challenges
-* query-replace across multiple files.
-** tags offers this
-* Updating changelog with commit messages?
-*show annotate and viewing previous versions etc..
-* pet peeve how to fix mixed indented code in read only file for temporary viewing.
-
-
-http://emacs.wordpress.com/2007/01/
-http://www.emacswiki.org/emacs/EmacsObjectOrientedProgrammingSystem
-
-* @Show off time
-** Let's see what you can teach us!
-** modes, tools
-** workflow etc..
 
 # these below are just reference for me on how epresent works
 # For code using (progn) in presentation-runner is better.

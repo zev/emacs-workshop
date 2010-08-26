@@ -258,7 +258,6 @@
   ;; http://xkcd.com/378/
   (find-file (concat democamp/image-dir "real_programmers.png")))
 
-
 (progn
   "learn more"
   (democamp/load-presentation "learn_more.txt"))
@@ -268,7 +267,9 @@
   (set-face-attribute 'default nil :height 200)
   (delete-other-windows)
   (sit-for 1)
-  (animate-sequence (list "Show" "and" "Tell") 1))
+  (animate-sequence (list "Show" "and" "Tell") 1)
+  (sit-for 5)
+  (democamp/load-presentation "show_and_tell.txt"))
 
 (progn
   "challenges"

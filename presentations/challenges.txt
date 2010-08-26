@@ -9,5 +9,12 @@
 * What else is missing or nice to have for editing Ruby?
 
 * How to fix indentation of read-only code?
+# selenium-client gem as example
 
 * Techniques for making a good Emacs screencast?
+
+* query-replace across multiple files
+
+** via tags
+
+** other ways?
