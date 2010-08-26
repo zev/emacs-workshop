@@ -11,3 +11,7 @@
 * How to fix indentation of read-only code?
 
 * Techniques for making a good Emacs screencast?
+
+* Function Frequency
+** http://xahlee.org/emacs/function-frequency.html
+** Dribble / record.el
