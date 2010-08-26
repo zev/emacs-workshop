@@ -1,0 +1,58 @@
+## これは何？
+RubyKaigi2010 向け[[解説資料動画パート1|RubyKaigi2010-emacs-rdebug.ogv]]の概要の和訳です
+The following is a rough transcript of the [[first part of a short video presentation|RubyKaigi2010-emacs-rdebug.ogv]] at Ruby Kaigi 2010
+
+## Transcript
+Emacs 上で動く Ruby デバッガはいくつも存在します。その中から、私の独断と偏見でベストだと思うものをいくつか取り上げます。
+There are a number of Emacs debugger interfaces for Ruby. I'll mention couple of them that in my biased opinion are the best.
+
+最初に、ruby-debug を紹介します。私はこれが最も洗練されていると思います。利用するためには、Gentoo Linux を使っている人以外は、ソースからインストールする必要があるでしょう。インストール手順は[[ここ|http://bashdb.sf.net/ruby-debug/rdebug-emacs.html#Installation]]に書かれています。
+The first works only for the debugger ruby-debug. I think it is the most sophisticated. Unless you are using a Gentoo Linux distribution, you will have to install this from the source. Installation instructions are [[here|http://bashdb.sf.net/ruby-debug/rdebug-emacs.html#Installation]].
+
+インストールが終わったら、`M-x load-library rdebug` でロードします。
+To load the Emacs code after the Emacs package has been installed: `M-x load-library rdebug`
+
+"rdebug" というコマンドが使えるようになっています。ここからは、サンプルプログラムを一からデバッグしていきます。まずは `M-x rdebug` から。
+And now I have a command called "rdebug". I will use that to debug a sample program from the beginning. `M-x rdebug`
+ 
+Debian ディストリビューションには、別の「rdebug」Emacs Lisp が存在します。パッケージ名「emacs-goodies」のものがそうです。プロンプトに `--emacs` と表示されていれば、正しいものを使っています。
+There is another Emacs rdebug Lisp command that comes in the Debian distribution under the package name *emacs-goodies*. You know you have the right one if you see `--emacs` in the prompt. 
+
+`M-x rdebug --emacs 3 gcd.rb 3 5`
+
+画面上段には、デバッガのコマンドラインとローカル変数の一覧が表示されています。中段にはソースコードと出力が。ソースコード枠の端には、矢印が表示されています。これは、今から実行しようとしている文を指しています。
+The top-most panel of windows is split between the debugger command line and local variables. The middle panel is split between the source code and output. There is an arrow in the fringe area of the source-code window to show you the statement you are about to run. 
+
+ここで Debugger メニューを見てみましょう。`[Stack of windows]` や `[Rocky II]` など、違った枠レイアウトが選べることが分かります。
+Check out the Debugger menu and the Window Layout section of that. You will see alternative window formats such as `[Stack of windows]` or  `[Rocky II]`
+
+`frame 0` で画面をリフレッシュします。
+To refresh the display `frame 0`
+
+1ステップ進めてみましょう。ソースコード枠とコールスタック枠が更新されるでしょう。現時点では gcd.rb の4行目にいます。
+Let me step a statement and you will see the location in both the source code and the call stack windows updated. Right now we are at line 4 in file gcd.rb  
+
+`step`
+
+コールスタック枠は、いま18行目にいるとの表示に変わり、ソースコート枠の矢印は現在位置に移動しました。
+Note that the call-stack windows show that we are now at line 18 and  the source code fringe arrow has been updated.
+
+"next" コマンドを使って現在行をステップオーバーしてみましょう。現状だと nil になっている変数 a と b の値が更新されます。
+Let me step over the entire line shown here using the command "next" and you will see that the values of "a" and "b" updated. Right now the values are nil.
+
+コマンドライン枠でコマンドを使う代わりに、ソースコード枠の方で操作することもできます。単一キーストロークだけでデバッガコマンドを実行できるマイナーモードがあります。rdebug-short-key-mode というのがそれです。実際にやってみましょう。
+Instead of running commands in a commmand-line window, you can run commands inside the source-code window. There is minor mode that allows single key-strokes to run debugger commands. This is called rdebug-short-key-mode. Let me show that.
+
+`M-x rdebug-short-key-mode`
+
+"ShortKeys" という表示が出たことと、ファイルのバッファがリードオンリーになっているのがポイントです。
+Notice the "ShortKeys" indicator and also notice the file is now read only. [points to %%].
+
+この状態でスペースキーを叩くとステップ実行できます。一番下には実際に実行されたコマンドが表示されています。
+Now when I hit the space bar, I step a statement. And down in the bottom message area I see the debugger command that was run. 
+
+コールスタック枠には2行表示されています。一つはいま実行している gcd メソッドの、もう一つは gcd を呼び出している箇所のものです。
+Notice the call-stack window now has two entries: an entry to reflect that I am in the gcd method and an entry for the place where I called gcd.
+
+ブレークポイントを置くには、b をタイプします。デフォルト状態では有効になりますが、t をタイプすると無効になります。再び t をタイプすると有効に戻ります。
+To set a breakpoint I type "b". Breakpoints are enabled by default but to toggle the breakpoint from enabled to disabled I type "t". Type "t" again and the breakpoint is enabled.

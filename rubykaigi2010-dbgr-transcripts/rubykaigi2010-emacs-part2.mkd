@@ -1,0 +1,35 @@
+いまお見せした rdebug Emacs インターフェースは、"Grand Unified Debugger" (gud.el) というものを利用しています。しかし、 GUD には問題も多くて、しょっちゅう悩まされていました。そこで、 Emacs デバッガのインターフェースを一から作りなおしてみることにしたというわけです。このインターフェース上では、私の関わっている Ruby デバッガも動きますし、それ以外のいろんなデバッガも動かすことができます。
+Underneath, the rdebug Emacs interface I just showed you uses the "Grand Unified Debugger", or gud.el. But GUD has a number of issues that I kept running into. So I am rewriting the Emacs debugger interface from scratch. It accomodates the Ruby debuggers I'm involved with as well as a number of other debuggers.
+
+[[ここ|http://wiki.github.com/rocky/emacs-dbgr/how-to-install]] にインストール手順が書かれています。
+Shown [[here|http://wiki.github.com/rocky/emacs-dbgr/how-to-install]] is the link which describes how to install the Emacs code.
+
+インストールが終わって、ロードするには次のようにします:
+To load the Emacs code after the Emacs package has been installed:
+
+`M-x load-library dbgr`
+
+この状態で、「dbgr-」で始まる名前のいくつかのコマンドが使えるようになっています。たとえば「dbgr-rdebug」など。一部、「dbgr-」で始まらないものもあります。
+There are now several commands that have been added that all start `dbgr-`, such as `dbgr-rdebug`. There also are a few commands to invoke some of the debuggers which don't start `dbgr-`.
+
+このデモでは、[[Ruby 1.9 debugger|http://github.com/rocky/rbdbgr]] を使ってみます。私がいま開発中のものです。別のデバッガでも操作は同様です。これを使って Ruby プログラムをデバッグするには、`rbdbgr` を使います。
+For demonstration, I'll use a new [[Ruby 1.9 debugger|http://github.com/rocky/rbdbgr]] that I've been working on. However the operation for the other debuggers is the same. To debug a Ruby program from the start, you can use the command `rbdbgr`
+
+`M-x rbdbgr gcd.rb 3 5`
+
+起動にあたって、過去の履歴を探します。何をしようとしているのが表示されます。
+For the invocation that is suggested, the rbdbgr command searches the invocation history and that is what is going on here.
+
+2つの枠が表示されています。上側がデバッガコマンド枠、下側がソースコード枠です。枠の配置は rdebug のものほど凄くはないです。以前と同様に、ソースコード枠の端には現在実行中の位置を示す矢印が置かれています。
+I now have two windows, a debugger command window on top and the source-code window on bottom. The window layout here is not as advanced as it is in the custom interface for rdebug. As before, there is an arrow in the fringe area of the source-code window to show you the statement you are about to run. 
+
+`step+`
+
+rdebug との違いは、一つ前にいた行の矢印が薄くなっているところです。
+Notice, in contrast to the rdebug interface, that the fringe arrow at the previous location has now faded a little bit. A "step over", or "next"
+
+`next`
+
+矢印が薄くなる効果は3段階まであります。ソースコード枠の方でも同様。Meta-↑で一つ前のポイントへ戻れます。Meta-↓で逆方向へ。
+and you see three levels of shading in the command window. That is also true in the source-code window. To see this, I type Meta-up arrow which adjusts the positions in both windows to the previous spots. And Meta-down arrow goes the other direction. [repeat] up ... down.
+
