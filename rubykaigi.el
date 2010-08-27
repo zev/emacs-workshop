@@ -175,6 +175,13 @@
   (democamp/load-code "calculator/app/models/quiz.rb"))
 
 (progn
+  "Ediff"
+  (democamp/load-presentation "diff.txt"))
+(progn
+  "Go show the diff"
+  (ediff "/Users/Zev/other_code/ruby_trunk/misc/ruby-mode.el" "/Users/Zev/projects/emacs-starter-kit/elpa/ruby-mode-1.1/ruby-mode.el"))
+
+(progn
   "Shell mode features"
   (delete-other-windows)
   ;;(jump-to-register ?a)

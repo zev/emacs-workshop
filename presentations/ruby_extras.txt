@@ -44,6 +44,7 @@
 
 ** imenu & idomenu as another way of scanning code structure.
 
+
 * RVM mode
 
 ** http://github.com/senny/rvm.el

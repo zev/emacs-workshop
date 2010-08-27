@@ -18,8 +18,14 @@
 
 ** [ M-/ ] and Hippie expand
 
-
 ** Please show off your awesome settings!
+
+* Other cool commands to know
+
+** [M-z] Zap to Char
+
+** [M-space] Remove all space but one
+
 
 * Keyboard Macros
 

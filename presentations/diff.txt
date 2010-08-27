@@ -1,0 +1,4 @@
+
+* Ediff
+
+** Show example of comparing ruby-modes in elpa and trunk
