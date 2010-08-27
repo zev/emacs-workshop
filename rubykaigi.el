@@ -1,7 +1,9 @@
 ;; These are the slides that will be run during the RubyKaigi
 
-;; This is how I will record what I am doing to create a proper script.
-(open-dribble-file "/tmp/rubykaigi-dribble.el")
+;; This is how I will record what I am doing to create a proper
+;; script.
+(progn
+  (open-dribble-file "/tmp/rubykaigi-dribble.el"))
 
 ;; Window register a
 (progn
@@ -10,30 +12,30 @@
   (tool-bar-mode -1)
   (frame-configuration-to-register ?b) ;; Store original config
 
+  ;;(message "face height is %s" (face-attribute 'default :height))
 
-  (message "face height is %s" (face-attribute 'default :height))
-  (set-face-attribute 'default nil :height 200)
-  (message "Mac set to full screen frame config \n %s" (current-frame-configuration))
+  ;; MAY STILL WANT THIS
+  ;;(set-face-attribute 'default nil :height 200)
 
-  ;; does not work on carbon emacs
-  ;;   (set-frame-configuration '('frame-configuration
-  ;;                                 ((fullscreen . fullboth))
-  ;;                                 ) 'nodelete)
 
-     ;; fullscreen hides the menu at the top
-     ;;     (modify-frame-parameters nil '((fullscreen . fullboth)))
-     ;; This seems to be OK for my machine
+  ;;(message "Mac set to full screen frame config \n %s" (current-frame-configuration))
+
+
+  ;; fullscreen hides the menu at the top
+  ;;     (modify-frame-parameters nil '((fullscreen . fullboth)))
+  ;; This seems to be OK for my machine
   (modify-frame-parameters nil '((width . 175)
                                  (height . 47)))
-
-
   (frame-configuration-to-register ?a))
 
 ;; Frame configuration b
 
 (progn
   "animate"
+  ;; Do I WANT THIS SIZE?
   (set-face-attribute 'default nil :height 200)
+  (modify-frame-parameters nil '((width . 102)
+                                 (height . 28)))
   (delete-other-windows)
   (sit-for 2)
   (animate-sequence (list "M-x ruby-and-emacs-workshop" "RubyKaigi 2010" "Zev Blut" "& You" "2010-08-28") 1))

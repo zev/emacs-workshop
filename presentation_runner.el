@@ -27,7 +27,7 @@
       (with-current-buffer (find-file-noselect democamp/presentation-file)
         (setq start (point))
         (forward-sexp)
-        (setq sexp (buffer-substring-no-properties start (point))))
+      (setq sexp (buffer-substring-no-properties start (point))))
       ;;(eval (read sexp))))
       (let ((esexp (read sexp)))
         (case (completing-read (format "%s %s: " (cadr esexp) "N/S/P :") '("N" "S" "P"))
@@ -171,5 +171,10 @@
   (global-set-key (kbd "C-<") 'democamp/previous)
   (global-set-key (kbd "C-?") 'democamp/repeat)
   (global-set-key (kbd "C-!") 'democamp/skip)
+
+  ;;make sure the runner starts at the beginning
+  (progn
+    (with-current-buffer (find-file-noselect democamp/presentation-file)
+      (goto-char (point-min))))
 )
 
