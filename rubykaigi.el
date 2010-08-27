@@ -25,7 +25,9 @@
   ;;     (modify-frame-parameters nil '((fullscreen . fullboth)))
   ;; This seems to be OK for my machine
   (modify-frame-parameters nil '((width . 175)
-                                 (height . 47)))
+                                 (height . 47)
+                                 (top . 22)
+                                 (left . 7)))
   (frame-configuration-to-register ?a))
 
 ;; Frame configuration b
@@ -35,7 +37,9 @@
   ;; Do I WANT THIS SIZE?
   (set-face-attribute 'default nil :height 200)
   (modify-frame-parameters nil '((width . 102)
-                                 (height . 28)))
+                                 (height . 28)
+                                 (top . 22)
+                                 (left . 7)))
   (delete-other-windows)
   (sit-for 2)
   (animate-sequence (list "M-x ruby-and-emacs-workshop" "RubyKaigi 2010" "Zev Blut" "& You" "2010-08-28") 1))
@@ -161,10 +165,10 @@
     )
 
   (democamp/load-code "align.rb")
-  (beginning-of-buffer)
-  (set-mark-command)
-  (end-of-buffer)
-  (dcse 'align 5)
+;;   (beginning-of-buffer)
+;;   (set-mark-command)
+;;   (end-of-buffer)
+;;   (dcse 'align 5)
   )
 
 ;; after an epresent-mode the screen is wonky revert to frame config
@@ -175,6 +179,9 @@
 
 ;; Rinari emacs-rails
 
+(progn
+  "rails-mode"
+  (democamp/load-code "calculator/app/models/quiz.rb"))
 
 (progn
   "Shell mode features"
@@ -191,15 +198,16 @@
 
   (insert "echo back to term-line-mode C-c j to work with shell like a standard buffer")
   (term-send-input)
-  (dcse 'term-line-mode 5)
-  (dcse 'isearch-backward nil '("@Basics"))
-  (dcse 'backward-sentence 3)
-  (dcse 'term-char-mode 5)
-  (insert "echo back to term-char-mode C-c k to show how it works like standard shell")
-  (term-send-input)
+  (insert "echo do a reverse search for basics")
+;;   (dcse 'term-line-mode 5)
+;;   (dcse 'isearch-backward nil '("@Basics"))
+;;   (dcse 'backward-sentence 3)
+;;   (dcse 'term-char-mode 5)
+;;   (insert "echo back to term-char-mode C-c k to show how it works like standard shell")
+;;   (term-send-input)
 
-  (insert "echo This is all very useful for things like passwords and what not")
-  (term-send-input)
+;;  (insert "echo This is all very useful for things like passwords and what not")
+;;  (term-send-input)
   )
 
 
@@ -210,6 +218,7 @@
   (setq sql-database (concat democamp/code-dir "sample.db"))
   (sql-sqlite)
   (delete-other-windows)
+  (sit-for 2)
   ;;create db
   (insert "create table memos(text, priority INTEGER);")
   (comint-send-input)
@@ -240,8 +249,8 @@
   (completing-read "enter for next command." '())
   (dcse 'magit-status nil "")
 
-  (completing-read "enter for next command." '())
-  (dcse 'git-status nil "")
+;;  (completing-read "enter for next command." '())
+;;  (dcse 'git-status nil "")
   ;; log and blame are strong here also integrats with vc tools so
   )
 
@@ -277,6 +286,10 @@
 (progn
   "show and tell and animation"
   (set-face-attribute 'default nil :height 200)
+  (modify-frame-parameters nil '((width . 102)
+                                 (height . 28)
+                                 (top . 22)
+                                 (left . 7)))
   (delete-other-windows)
   (sit-for 1)
   (animate-sequence (list "Show" "and" "Tell") 1))

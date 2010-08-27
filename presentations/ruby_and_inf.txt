@@ -22,8 +22,9 @@
 ** [ C-M-h ] mark defun
 
 * Indentation (re indent) etc
-**   [C-M-q] indent-exp based on indent level of def
 
+**   [C-M-q] indent-exp based on indent level of def
+** Select whole buffer and indent
 
 #** next defp
 #** [ ] select def
@@ -32,26 +33,24 @@
 
 * Commenting
 
-** Ruby-mode and sending to inf-ruby
-   [C-c C-b] send block
-   [C-c C-x] [C-M-x] send definition
-   # I find that these two methods are unreliable as to what the
-   send. it is probably just me, so I want someone else to show me the
-   light.
+** M-;
 
-   [C-c C-l] load file
-   [C-c C-r] send region
+* Ruby-mode and sending to inf-ruby
+
+** [C-c C-l] load file
+** [C-c C-r] send region
    # These two are reliable
-   [C-c C-z] switch to inf mode
+**   [C-c C-z] switch to inf mode
 
+* Inf2
 
-** electric mode
+**  [C-c C-b] send block
 
-** IRB interaction
+**   [C-c C-x] [C-M-x] send definition
+= I find that these two methods are unreliable as to what the =
+= send. it is probably just me, so I want someone else to show me the=
+= light.=
 
-   #[C-x C-e] send last line of code to ruby process
-
-   [C-c M-r] send region and go
-
+* electric mode
 
 * q

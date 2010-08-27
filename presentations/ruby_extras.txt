@@ -1,32 +1,37 @@
 * XXX
+
 * Referencing documentation
-** Ri yari the many others
+** [Ri] yari
 
 * @Finding code
 ** Grep
 ** M-x occur
 ** TAGS
-** Other modes to help
+** Other modes to help?
 
 * Grepping
 ** M-x grep
 ** M-x rgrep
-** my horrible grep hacks
+
 * TAGS
-http://www.gnu.org/software/emacs/manual/html_node/emacs/Select-Tags-Table.html#Select-Tags-Table
+
+** [M-.]
 
 * Other Ruby tools
-** Rdoc modes?
 ** Running tests
 ** Rails/Rinari
 ** Textmate-mode
 ** Snippets
+** Rdoc modes?
 
-# ruby hide show custom elide
+
+* Hide elide imeu
+
+** ruby hide show custom elide
 # hs-mode does not seem to actually hide any ruby code.
 
 
-* imenu & idomenu as another way of scanning code structure.
+** imenu & idomenu as another way of scanning code structure.
 
 * RVM mode
 
