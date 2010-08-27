@@ -4,18 +4,29 @@
 ** [Ri] yari
 
 * @Finding code
+
 ** Grep
+
 ** M-x occur
+
 ** TAGS
+
 ** Other modes to help?
 
 * Grepping
+
 ** M-x grep
+
 ** M-x rgrep
+
 
 * TAGS
 
-** [M-.]
+** [M-.] find-tag
+
+** [C-u M-.] find tag again
+
+** [M-*] pop back
 
 * Other Ruby tools
 ** Running tests

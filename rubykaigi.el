@@ -10,27 +10,17 @@
   "Initial setup"
   (menu-bar-mode 1)
   (tool-bar-mode -1)
-  (frame-configuration-to-register ?b) ;; Store original config
-
-  ;;(message "face height is %s" (face-attribute 'default :height))
-
-  ;; MAY STILL WANT THIS
-  ;;(set-face-attribute 'default nil :height 200)
-
-
-  ;;(message "Mac set to full screen frame config \n %s" (current-frame-configuration))
-
-
-  ;; fullscreen hides the menu at the top
-  ;;     (modify-frame-parameters nil '((fullscreen . fullboth)))
-  ;; This seems to be OK for my machine
   (modify-frame-parameters nil '((width . 175)
                                  (height . 47)
                                  (top . 22)
                                  (left . 7)))
-  (frame-configuration-to-register ?a))
+  (frame-configuration-to-register ?b) ;; Store original config
 
-;; Frame configuration b
+  ;;(message "Mac set to full screen frame config \n %s" (current-frame-configuration))
+)
+
+;; Frame configuration a and b are full screen modes with b being
+;; normal font and a having the larger font
 
 (progn
   "animate"
@@ -40,6 +30,7 @@
                                  (height . 28)
                                  (top . 22)
                                  (left . 7)))
+  (frame-configuration-to-register ?a)
   (delete-other-windows)
   (sit-for 2)
   (animate-sequence (list "M-x ruby-and-emacs-workshop" "RubyKaigi 2010" "Zev Blut" "& You" "2010-08-28") 1))
