@@ -16,17 +16,18 @@
   (message "Mac set to full screen frame config \n %s" (current-frame-configuration))
 
   ;; does not work on carbon emacs
-     (set-frame-configuration '('frame-configuration
-                                ((fullscreen . fullboth))
-                                ) 'nodelete)
+  ;;   (set-frame-configuration '('frame-configuration
+  ;;                                 ((fullscreen . fullboth))
+  ;;                                 ) 'nodelete)
+
+     ;; fullscreen hides the menu at the top
+     ;;     (modify-frame-parameters nil '((fullscreen . fullboth)))
+     ;; This seems to be OK for my machine
+  (modify-frame-parameters nil '((width . 175)
+                                 (height . 47)))
 
 
-;;   (set-frame-configuration '( 'frame-configuration
-;;                               (width . 177)
-;;                               (height . 47)
-;;                               ) 'nodelete)
-
-    (frame-configuration-to-register ?a))
+  (frame-configuration-to-register ?a))
 
 ;; Frame configuration b
 
