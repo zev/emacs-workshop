@@ -1,0 +1,30 @@
+* XXX
+
+* @Helpful modes
+
+** ido-mode
+# how to handle creating new files with C-x C-f finds a matching file.
+=(ido-mode t)=
+=(setq ido-enable-flex-matching t)=
+
+** Smex
+
+
+** anything.el
+# Don't get dragged down into the details of these modes until
+# later. But it might be good to let members know about them now?
+
+* hippie-expand / abbrev
+
+** [ M-/ ] and Hippie expand
+
+
+** Please show off your awesome settings!
+
+* Keyboard Macros
+
+** C-x ( [start recording]
+
+** C-x ) [stop recording]
+
+** C-x e [replay macro]
