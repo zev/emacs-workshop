@@ -272,12 +272,13 @@
   (democamp/load-presentation "learn_more.txt"))
 
 (progn
-  "show and tell"
+  "show and tell and animation"
   (set-face-attribute 'default nil :height 200)
   (delete-other-windows)
   (sit-for 1)
-  (animate-sequence (list "Show" "and" "Tell") 1)
-  (sit-for 5)
+  (animate-sequence (list "Show" "and" "Tell") 1))
+(progn
+  "show and tell slides"
   (democamp/load-presentation "show_and_tell.txt"))
 
 (progn
