@@ -1,0 +1,8 @@
+* XXX
+* Ruby Koan
+
+** get compile mode to work
+
+** make functions to hop to code to edit
+
+** Fill out a few and track our keys

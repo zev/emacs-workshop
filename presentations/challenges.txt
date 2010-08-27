@@ -1,3 +1,4 @@
+* XXX
 * RDOC template creator
 
 # http://www.niksula.hut.fi/~thasu/emacs-rdoc-fill.html

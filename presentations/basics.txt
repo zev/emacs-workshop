@@ -1,3 +1,4 @@
+* XXX
 # Show the basics of Emacs (can skip)
 * @Basics
 ** Open/Save file

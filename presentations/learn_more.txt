@@ -1,3 +1,4 @@
+* XXX
 * Where to learn more about Emacs
 
 ** C-h t Emacs tutorial and built in manuals

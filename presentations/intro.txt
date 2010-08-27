@@ -1,3 +1,4 @@
+* XXX
 * @M-x ruby-and-emacs-workshop
 
 ** To learn more about using Emacs efficiently.

@@ -1,0 +1,51 @@
+* XXX
+* @Ruby
+** Navigation
+   [C-down] go to next empty line
+   [C-up] go to previous line comint-previous-input
+   # This actually jumps the empty lines
+
+   [C-M-a] beginning of defun
+   [C-M-e] end of defun
+   # both of these seem to take me to the top of the class versus defs
+
+   [C-M-f] forward sexp
+   [C-M-b] backward sexp
+   # This depends upon where the cursor is
+
+   [C-M-n] end of block
+   [C-M-p] beginning of block
+   # These tend to be a bit more understandable
+
+** Indentation (re indent) etc
+   [C-M-q] indent-exp based on indent level of def
+
+
+
+** next def
+** [ ] select def
+# Beginning of defun has issues from time to time
+** [ C-M-h ] mark defun
+** Commenting
+
+** Ruby-mode and sending to inf-ruby
+   [C-c C-b] send block
+   [C-c C-x] [C-M-x] send definition
+   # I find that these two methods are unreliable as to what the
+   send. it is probably just me, so I want someone else to show me the
+   light.
+
+   [C-c C-l] load file
+   [C-c C-r] send region
+   # These two are reliable
+   [C-c C-z] switch to inf mode
+
+
+** electric mode
+
+** IRB interaction
+
+   #[C-x C-e] send last line of code to ruby process
+
+   [C-c M-r] send region and go
+

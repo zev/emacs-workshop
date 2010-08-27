@@ -54,6 +54,9 @@
   "presentation globbed together"
   (democamp/load-presentation "presentation-1.txt"))
 
+(progn
+  "Ruby Koan"
+  (democamp/load-presentation "ruby_koan.txt"))
 
 ;; kind of want a macro to show the key combination and the defun it
 ;; is mapped to then run the combo and delay for a second
