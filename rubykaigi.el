@@ -52,11 +52,15 @@
 ;; epresent file 1
 (progn
   "presentation globbed together"
-  (democamp/load-presentation "presentation-1.txt"))
+  (democamp/load-presentation "ruby_and_inf.txt"))
 
 (progn
   "Ruby Koan"
   (democamp/load-presentation "ruby_koan.txt"))
+
+(progn
+  "Ruby extras"
+  (democamp/load-presentation "ruby_extras.txt"))
 
 ;; kind of want a macro to show the key combination and the defun it
 ;; is mapped to then run the combo and delay for a second
@@ -223,6 +227,9 @@
   ;; Show sql-send-region from other buffer
   )
 
+(progn
+  "vc slides"
+  (democamp/load-presentation "vc.txt"))
 
 (progn
   "Show off magit and git.el in vc-status"
