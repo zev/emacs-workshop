@@ -34,7 +34,7 @@
   "animate"
   (set-face-attribute 'default nil :height 200)
   (delete-other-windows)
-  (sit-for 1)
+  (sit-for 2)
   (animate-sequence (list "M-x ruby-and-emacs-workshop" "RubyKaigi 2010" "Zev Blut" "& You" "2010-08-28") 1))
 
 (democamp/load-presentation "intro.txt")

@@ -28,3 +28,5 @@
 ** C-x ) [stop recording]
 
 ** C-x e [replay macro]
+
+* q

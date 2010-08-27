@@ -78,3 +78,5 @@
 ** Describing modes
 ** Looking up functions and variables
 ** Keys for a mode
+
+* q

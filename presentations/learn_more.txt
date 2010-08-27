@@ -33,3 +33,5 @@ Emacsテクニックバイブル　~作業効率をカイゼンする200の技
 ** Emacs IDEverything http://vimeo.com/13158054
 
 ** What you can learn from ido.el http://vimeo.com/1013263
+
+* q
