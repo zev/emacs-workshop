@@ -1,6 +1,13 @@
 * XXX
 * Ruby Koan
 
+** Let's use Emacs to fill out some koans
+
+
+** http://github.com/edgecase/ruby_koans
+
+* Challenges
+
 ** get compile mode to work
 
 ** make functions to hop to code to edit

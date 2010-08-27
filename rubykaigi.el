@@ -62,73 +62,72 @@
   "Ruby extras"
   (democamp/load-presentation "ruby_extras.txt"))
 
-;; kind of want a macro to show the key combination and the defun it
-;; is mapped to then run the combo and delay for a second
-(progn
-  "Moving around ruby"
-  (delete-other-windows)
-  (jump-to-register ?b)
-;;  (set-face-attribute 'default nil :height 200)
-  (democamp/load-code "cgi.rb")
+;; This was too fast and did not make sense
+;; ;; kind of want a macro to show the key combination and the defun it
+;; ;; is mapped to then run the combo and delay for a second
+;; (progn
+;;   "Moving around ruby"
+;;   (delete-other-windows)
+;;   (jump-to-register ?b)
+;; ;;  (set-face-attribute 'default nil :height 200)
+;;   (democamp/load-code "cgi.rb")
 
-  ;; simple paragraph movement
-  (dcse 'forward-paragraph 5)
-  (dcse 'backward-paragraph 5)
+;;   ;; simple paragraph movement
+;;   (dcse 'forward-paragraph 5)
+;;   (dcse 'backward-paragraph 5)
 
-  ;; defun movement
-  (dcse 'ruby-end-of-defun 5)
-  (dcse 'ruby-beginning-of-defun 5)
+;;   ;; defun movement
+;;   (dcse 'ruby-end-of-defun 5)
+;;   (dcse 'ruby-beginning-of-defun 5)
 
-  ;; sexp movement
-  ;; may want to search to a def of inside an if
-  (dcse 'forward-paragraph 2)
-  (dcse 'forward-paragraph 2)
-  (dcse 'ruby-forward-sexp 4)
-  (dcse 'ruby-forward-sexp 2)
-  (dcse 'ruby-forward-sexp 2)
+;;   ;; sexp movement
+;;   ;; may want to search to a def of inside an if
+;;   (dcse 'forward-paragraph 2)
+;;   (dcse 'forward-paragraph 2)
+;;   (dcse 'ruby-forward-sexp 4)
+;;   (dcse 'ruby-forward-sexp 2)
+;;   (dcse 'ruby-forward-sexp 2)
 
-  ;; block movement
-  (search-forward "initialize")
-  (dcse 'ruby-end-of-block 5)
-  (dcse 'ruby-end-of-block 2)
-  (dcse 'ruby-beginning-of-block 5)
-  )
+;;   ;; block movement
+;;   (search-forward "initialize")
+;;   (dcse 'ruby-end-of-block 5)
+;;   (dcse 'ruby-end-of-block 2)
+;;   (dcse 'ruby-beginning-of-block 5)
+;;   )
 
+;; Just remember to show off yari during the Koans
+;; ;; Using ri
+;; (progn
+;;   "using ri"
+;;   (delete-other-windows)
+;;   (jump-to-register ?b)
+;;   (set-face-attribute 'default nil :height 200)
+;;   (democamp/load-code "sample.rb")
+;;   (search-forward "inject")
+;;   (yari))
 
-;; Using ri
-(progn
-  "using ri"
-  (delete-other-windows)
-  (jump-to-register ?b)
-  (set-face-attribute 'default nil :height 200)
-  (democamp/load-code "sample.rb")
-  (search-forward "inject")
-  (yari))
-
-
-(progn
-  "inf ruby mode"
-  (delete-other-windows)
-  (dcse 'inf-ruby 5)
-  (democamp/load-code "sample.rb")
-  (delete-other-windows)
-  (beginning-of-buffer)
-  (sit-for 1)
-  (search-forward "sum")
-  (sit-for 1)
-  (ruby-send-definition)
-  (split-window-vertically)
-  (switch-to-buffer "*ruby*")
-
-
-  (switch-to-buffer "sample.rb")
-  (end-of-buffer)
-  (insert "\n\nHoge.new.sum([5])")
-  ;; (move-beginning-of-line)
-  ;; (set-mark-command)
-  ;; (move-end-of-line)
-  (ruby-send-region-and-go)
-  )
+;; Not working well either
+;; (progn
+;;   "Skip not working inf ruby mode"
+;;   (delete-other-windows)
+;;   (dcse 'inf-ruby 5)
+;;   (democamp/load-code "sample.rb")
+;;   (delete-other-windows)
+;;   (beginning-of-buffer)
+;;   (sit-for 1)
+;;   (search-forward "sum")
+;;   (sit-for 1)
+;;   (ruby-send-definition)
+;;   (split-window-vertically)
+;;   (switch-to-buffer "*ruby*")
+;;   (switch-to-buffer "sample.rb")
+;;   (end-of-buffer)
+;;   (insert "\n\nHoge.new.sum([5])")
+;;   ;; (move-beginning-of-line)
+;;   ;; (set-mark-command)
+;;   ;; (move-end-of-line)
+;;   (ruby-send-region-and-go)
+;;   )
 
 ;; from http://github.com/rust/dotemacs/blob/master/.emacs
 (progn
