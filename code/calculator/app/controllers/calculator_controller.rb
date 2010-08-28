@@ -11,7 +11,7 @@ class CalculatorController < ApplicationController
   end
 
   def answer
-
+    @message = "Congrats!!!"
   end
 
 end
