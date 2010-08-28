@@ -26,6 +26,9 @@
 
 ** [M-space] Remove all space but one
 
+** [M-q] fill-paragraph
+** How to make this work better with Ruby comments
+
 
 * Keyboard Macros
 

@@ -10,13 +10,14 @@
   "Initial setup"
   (menu-bar-mode 1)
   (tool-bar-mode -1)
-  (modify-frame-parameters nil '((width . 175)
-                                 (height . 47)
+  (modify-frame-parameters nil '(
+
+                                 (width . 138) (height . 45)
                                  (top . 22)
                                  (left . 7)))
   (frame-configuration-to-register ?b) ;; Store original config
 
-  ;;(message "Mac set to full screen frame config \n %s" (current-frame-configuration))
+;;  (message "Mac set to full screen frame config \n %s" (current-frame-configuration))
 )
 
 ;; Frame configuration a and b are full screen modes with b being
@@ -26,8 +27,9 @@
   "animate"
   ;; Do I WANT THIS SIZE?
   (set-face-attribute 'default nil :height 200)
-  (modify-frame-parameters nil '((width . 102)
-                                 (height . 28)
+  (modify-frame-parameters nil '(
+
+                                 (width . 80) (height . 26)
                                  (top . 22)
                                  (left . 7)))
   (frame-configuration-to-register ?a)
@@ -285,8 +287,8 @@
 (progn
   "show and tell and animation"
   (set-face-attribute 'default nil :height 200)
-  (modify-frame-parameters nil '((width . 102)
-                                 (height . 28)
+  (modify-frame-parameters nil '(
+                                 (width . 80) (height . 26)
                                  (top . 22)
                                  (left . 7)))
   (delete-other-windows)
