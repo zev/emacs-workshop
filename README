@@ -15,3 +15,12 @@ Some of these slides will load up a epresent slide.  Inside of
 epresent press n to go to the next slide inside of epresent.  To go to
 the next slide in the "presentation" simply press C-> even inside of
 epresent.
+
+Here are links to some of the tools and presentations talked about at the RubyKaigi workshop:
+
+* http://github.com/rocky/emacs-dbgr/wiki
+
+* http://github.com/m2ym/auto-complete
+* http://github.com/m2ym/rsense
+
+* http://github.com/edgecase/ruby_koans
