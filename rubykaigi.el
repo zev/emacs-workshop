@@ -247,6 +247,7 @@
   (completing-read "enter for next command." '())
   (dcse 'magit-status nil "")
 
+  ;; git.el and vc-git are slightly different but vc-annotate now works!
 ;;  (completing-read "enter for next command." '())
 ;;  (dcse 'git-status nil "")
   ;; log and blame are strong here also integrats with vc tools so
