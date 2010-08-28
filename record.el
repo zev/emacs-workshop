@@ -14,8 +14,8 @@
 (defun track-command-executed ()
   "Records command executed and keys pressed"
   (with-current-buffer rubykaigidribble
-    (insert (format "cmd: %s keys %s\n" this-command (this-command-keys)))
-    (write-file rubykaigidribble)    ))
+    (insert (format "cmd: %s keys %s\n" this-command (this-command-keys)))))
+    ;;(write-file rubykaigidribble)    ))
 
 (defun track-mode-change ()
   "Record the major mode and all minor-modes activated"
